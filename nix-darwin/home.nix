@@ -19,14 +19,22 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    ".zshrc".source = /Users/zen/dotfiles/zshrc/.zshrc;
-    ".config/wezterm".source = /Users/zen/dotfiles/wezterm;
-    ".config/starship".source = /Users/zen/dotfiles/starship;
-    ".config/nvim".source = /Users/zen/dotfiles/nvim;
-    ".config/ShoshiNvim".source = /Users/zen/dotfiles/ShoshiNvim;
-    ".config/nix-darwin".source = /Users/zen/dotfiles/nix-darwin;
-    ".tmux.conf".source = /Users/zen/dotfiles/.tmux.conf;
-    ".config/sesh".source = /Users/zen/dotfiles/sesh;
+    # ".zshrc".source = /Users/zen/dotfiles/zshrc/.zshrc;
+    # ".config/wezterm".source = /Users/zen/dotfiles/wezterm;
+    # ".config/starship".source = /Users/zen/dotfiles/starship;
+    # ".config/nvim".source = /Users/zen/dotfiles/nvim;
+    # ".config/ShoshiNvim".source = /Users/zen/dotfiles/ShoshiNvim;
+    # ".config/nix-darwin".source = /Users/zen/dotfiles/nix-darwin;
+    # ".tmux.conf".source = /Users/zen/dotfiles/.tmux.conf;
+    # ".config/sesh".source = /Users/zen/dotfiles/sesh;
+    ".zshrc".source = ../zshrc/.zshrc;
+    ".config/wezterm".source = ../wezterm;
+    ".config/starship".source = ../starship;
+    ".config/nvim".source = ../nvim;
+    ".config/ShoshiNvim".source = ../ShoshiNvim;
+    ".config/nix-darwin".source = ../nix-darwin;
+    ".tmux.conf".source = ../.tmux.conf;
+    ".config/sesh".source = ../sesh;
   };
 
   home.sessionVariables = {

@@ -26,8 +26,8 @@
 	pkgs.bat
 	pkgs.zoxide
 	pkgs.fzf
-	pkgs.git
 	pkgs.lua
+	pkgs.git
 	pkgs.lazygit
 	pkgs.luajit
 	pkgs.luarocks
@@ -72,6 +72,9 @@
   in
   {
     darwinConfigurations."Pantorns-MacBook-Air" = nix-darwin.lib.darwinSystem {
+            system = "aarch64-darwin";
+        pkgs = import inputs.nixpkgs { system = "aarch64-darwin"; };
+
       modules = [ 
       configuration
         home-manager.darwinModules.home-manager {
