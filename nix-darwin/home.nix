@@ -23,13 +23,13 @@
     # ".config/wezterm".source = /Users/zen/dotfiles/wezterm;
     # ".config/starship".source = /Users/zen/dotfiles/starship;
     # ".config/nvim".source = /Users/zen/dotfiles/nvim;
-    # ".config/ShoshiNvim".source = /Users/zen/dotfiles/ShoshiNvim;
+    # ".config/ShoshiNvim".source = ../ShoshiNvim;
     # ".config/nix-darwin".source = /Users/zen/dotfiles/nix-darwin;
     # ".tmux.conf".source = /Users/zen/dotfiles/.tmux.conf;
     # ".config/sesh".source = /Users/zen/dotfiles/sesh;
     ".zshrc".source = ../zshrc/.zshrc;
     ".config/wezterm".source = ../wezterm;
-    ".config/starship".source = ../starship;
+    ".config/starship".source = ../starship.toml;
     ".config/nvim".source = ../nvim;
     ".config/ShoshiNvim".source = ../ShoshiNvim;
     ".config/nix-darwin".source = ../nix-darwin;

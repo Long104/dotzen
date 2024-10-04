@@ -26,14 +26,19 @@
 	pkgs.bat
 	pkgs.zoxide
 	pkgs.fzf
-	pkgs.lua
 	pkgs.git
 	pkgs.lazygit
+	pkgs.nodejs_22
+	# pkgs.lua
 	pkgs.luajit
+	# pkgs.luajit_2_0
 	pkgs.luarocks
 	pkgs.tmux
 	];
-
+        # environment.shells = [ pkgs.bash pkgs.zsh ];
+        # environment.loginShell = pkgs.zsh;
+        # environment.systemPath = [ "/opt/homebrew/bin" ];
+        # environment.pathsToLink = [ "/Applications" ];
       services.nix-daemon.enable = true;
       nix.settings.experimental-features = "nix-command flakes";
       programs.zsh.enable = true;
@@ -63,7 +68,7 @@
               global.brewfile = true;
               masApps = { };
               # casks = [ "raycast" "amethyst" ];
-              casks = [ "visual-studio-code" "docker" ];
+              casks = [ "visual-studio-code" "docker" "wezterm"];
               # taps = [ "fujiapple852/trippy" ];
               # brews = [ "trippy" ];
               brews = [ "imagemagick" ];

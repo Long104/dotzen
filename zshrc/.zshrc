@@ -133,6 +133,52 @@ function nvims() {
 
 bindkey -s ^a "nvims\n"
 
+bind-key "K" display-popup -E -w 40% "sesh connect \"$(
+	sesh list -i | gum filter --limit 1 --placeholder 'Pick a sesh' --height 50 --prompt='⚡'
+)\""
+
+function sesh-sessions() {
+  {
+    exec </dev/tty
+    exec <&1
+    local session
+    session=$(sesh list -t -c | fzf --height 40% --reverse --border-label ' sesh ' --border --prompt '⚡  ')
+    [[ -z "$session" ]] && return
+    sesh connect $session
+  }
+}
+
+bind-key "T" run-shell "sesh connect \"$(
+	sesh list | fzf-tmux -p 55%,60% \
+		--no-sort --ansi --border-label ' sesh ' --prompt '⚡  ' \
+		--header '  ^a all ^t tmux ^g configs ^x zoxide ^d tmux kill ^f find' \
+		--bind 'tab:down,btab:up' \
+		--bind 'ctrl-a:change-prompt(⚡  )+reload(sesh list)' \
+		--bind 'ctrl-t:change-prompt(🪟  )+reload(sesh list -t)' \
+		--bind 'ctrl-g:change-prompt(⚙️  )+reload(sesh list -c)' \
+		--bind 'ctrl-x:change-prompt(📁  )+reload(sesh list -z)' \
+		--bind 'ctrl-f:change-prompt(🔎  )+reload(fd -H -d 2 -t d -E .Trash . ~)' \
+		--bind 'ctrl-d:execute(tmux kill-session -t {})+change-prompt(⚡  )+reload(sesh list)'
+)\""
+
+
+zle     -N             sesh-sessions
+bindkey -M emacs '\es' sesh-sessions
+bindkey -M vicmd '\es' sesh-sessions
+bindkey -M viins '\es' sesh-sessions
+
+# Check if TMUX is not set
+if [ -z "$TMUX" ]; then
+    # Check if the tmux session 'code' exists
+    if tmux has-session -t code 2>/dev/null; then
+        tmux attach -t code
+    else
+        tmux new-session -s code
+    fi
+fi
+
+
+
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
