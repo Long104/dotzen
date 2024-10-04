@@ -12,7 +12,8 @@ local wezterm = require("wezterm")
 -- local fish_path = "/Users/zen/.nix-profile/bin/fish"
 
 -- local fish_path = "/usr/bin/fish"
- local fish_path = "/bin/bash"
+ -- local fish_path = "/bin/bash"
+local zsh_path = "/bin/zsh"
 
 local config = {}
 -- Use config builder object if possible if wezterm.config_builder then config = wezterm.config_builder()
@@ -84,7 +85,7 @@ config.initial_cols = 230
 config.freetype_render_target = "HorizontalLcd"
 config.cell_width = 0.9
 -- Settings
-config.default_prog = { fish_path, "-l" }
+config.default_prog = { zsh_path, "-l" }
 -- config.color_scheme = "Tokyo Night"
 -- config.color_scheme = "Kanagawa Dragon (Gogh)"
 config.color_scheme = "Kanagawa (Gogh)"
