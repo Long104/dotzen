@@ -30,7 +30,7 @@
 	pkgs.luajit
 	# pkgs.luajit_2_0
 	pkgs.luarocks
-	# pkgs.tmux
+	pkgs.tmux
 	];
         # environment.shells = [ pkgs.bash pkgs.zsh ];
         # environment.loginShell = pkgs.zsh;
