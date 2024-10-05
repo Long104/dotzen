@@ -49,6 +49,11 @@
     "$HOME/.nix-profile/bin"
   ];
   programs.home-manager.enable = true;
+  programs.git = {
+    enable = true;
+    userName = "pantorn";
+    userEmail = "longpantorn@gmail.com";
+  };
   programs.zsh = {
     enable = true;
     initExtra = ''
