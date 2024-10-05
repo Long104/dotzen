@@ -13,6 +13,7 @@
   home.packages = [
     # pkgs.starship
     pkgs.fastfetch
+    pkgs.yazi
     pkgs.sesh
     pkgs.alejandra
     pkgs.gum
