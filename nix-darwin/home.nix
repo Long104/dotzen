@@ -15,10 +15,7 @@
    pkgs.sesh
    pkgs.alejandra
    pkgs.gum
-	 # pkgs.eza
-	 pkgs.zoxide
 	 pkgs.neovim 
-	 # pkgs.bat
    pkgs.lazygit
   ];
 

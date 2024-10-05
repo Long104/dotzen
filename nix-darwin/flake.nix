@@ -18,14 +18,16 @@
       environment.systemPackages =
         [ 
 	pkgs.vim
-	# pkgs.zoxide
-	# pkgs.ripgrep
-	# pkgs.fd
+	pkgs.zoxide
+	pkgs.ripgrep
+	pkgs.fd
 	pkgs.curl
-	# pkgs.fzf
+	pkgs.eza
+	pkgs.fzf
 	pkgs.git
 	pkgs.nodejs_22
   pkgs.go
+	pkgs.bat
 	# pkgs.lua
 	pkgs.luajit
 	# pkgs.luajit_2_0
