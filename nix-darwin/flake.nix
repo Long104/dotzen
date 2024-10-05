@@ -80,12 +80,14 @@
       };
     };
   in {
-    imports = [ <home-manager/nix-darwin> ];
     darwinConfigurations."Pantorns-MacBook-Air" = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       pkgs = import inputs.nixpkgs {system = "aarch64-darwin";};
 
       modules = [
+        {
+          imports = [<home-manager/nix-darwin>];
+        }
         configuration
         home-manager.darwinModules.home-manager
         {

@@ -12,6 +12,7 @@
   # Makes sense for user specific applications that shouldn't be available system-wide
   home.packages = [
     # pkgs.starship
+    pkgs.atuin
     pkgs.fastfetch
     pkgs.yazi
     pkgs.sesh
