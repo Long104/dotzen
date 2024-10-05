@@ -28,6 +28,8 @@
 	pkgs.nodejs_22
   pkgs.go
 	pkgs.bat
+  pkgs.cargo
+  pkgs.rustc
 	# pkgs.lua
 	pkgs.luajit
 	# pkgs.luajit_2_0

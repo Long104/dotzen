@@ -1,22 +1,23 @@
 # home.nix
-# home-manager switch 
-
-{ config, pkgs, ... }:
-
+# home-manager switch
 {
+  config,
+  pkgs,
+  ...
+}: {
   home.username = "pantornchuavallee";
   home.homeDirectory = "/Users/zen";
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
-# Makes sense for user specific applications that shouldn't be available system-wide
+  # Makes sense for user specific applications that shouldn't be available system-wide
   home.packages = [
-   # pkgs.starship
-   pkgs.fastfetch
-   pkgs.sesh
-   pkgs.alejandra
-   pkgs.gum
-	 pkgs.neovim 
-   pkgs.lazygit
+    # pkgs.starship
+    pkgs.fastfetch
+    pkgs.sesh
+    pkgs.alejandra
+    pkgs.gum
+    pkgs.neovim
+    pkgs.lazygit
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -45,7 +46,7 @@
 
   home.sessionPath = [
     "/run/current-system/sw/bin"
-      "$HOME/.nix-profile/bin"
+    "$HOME/.nix-profile/bin"
   ];
   programs.home-manager.enable = true;
   programs.zsh = {
