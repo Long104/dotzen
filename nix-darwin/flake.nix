@@ -85,9 +85,6 @@
       pkgs = import inputs.nixpkgs {system = "aarch64-darwin";};
 
       modules = [
-        {
-          imports = [<home-manager/nix-darwin>];
-        }
         configuration
         home-manager.darwinModules.home-manager
         {

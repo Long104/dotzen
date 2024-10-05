@@ -50,6 +50,9 @@
     "/run/current-system/sw/bin"
     "$HOME/.nix-profile/bin"
   ];
+
+  imports = [<home-manager/nix-darwin>];
+
   programs.home-manager.enable = true;
   programs.git = {
     enable = true;
