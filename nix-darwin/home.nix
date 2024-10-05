@@ -10,10 +10,16 @@
 
 # Makes sense for user specific applications that shouldn't be available system-wide
   home.packages = [
-   pkgs.starship
+   # pkgs.starship
    pkgs.fastfetch
    pkgs.sesh
-   pkgs.tmux
+   pkgs.alejandra
+   pkgs.gum
+	 pkgs.eza
+	 # pkgs.zoxide
+	 pkgs.neovim 
+	 pkgs.bat
+   pkgs.lazygit
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
