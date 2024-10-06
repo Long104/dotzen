@@ -3,8 +3,13 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nix-darwin.url = "github:LnL7/nix-darwin";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    # nix-darwin.url = "github:LnL7/nix-darwin";
+    # nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    darwin = {
+      url = "github:lnl7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -14,7 +19,7 @@
     nix-homebrew = {
       url = "github:zhaofengli/nix-homebrew";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nix-darwin.follows = "darwin";
+      inputs.nix-darwin.follows = "nix-darwin";
     };
     homebrew-core = {
       url = "github:homebrew/homebrew-core";
@@ -139,7 +144,7 @@
 
       modules = [
         ./machines/zen/configuration.nix
-        # ./machines/zen/homebrew.nix
+        ./machines/zen/homebrew.nix
         configuration
 
         home-manager.darwinModules.home-manager
