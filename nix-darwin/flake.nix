@@ -108,7 +108,7 @@
       pkgs = import inputs.nixpkgs {system = "aarch64-darwin";};
 
       modules = [
-        # ./machines/zen/configuration.nix
+        ./machines/zen/configuration.nix
         # ./machines/zen/homebrew.nix
         configuration
         home-manager.darwinModules.home-manager
