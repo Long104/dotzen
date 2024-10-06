@@ -52,34 +52,40 @@
     ...
   } @ inputs: let
     configuration = {pkgs, ...}: {
-      environment.systemPackages = [
-        pkgs.vim
-        pkgs.zoxide
-        pkgs.ripgrep
-        pkgs.fd
-        pkgs.curl
-        pkgs.eza
-        pkgs.fzf
-        pkgs.git
-        pkgs.nodejs_22
-        pkgs.go
-        pkgs.bat
-        pkgs.cargo
-        pkgs.rustc
-        # pkgs.lua
-        pkgs.luajit
-        # pkgs.luajit_2_0
-        pkgs.luarocks
-        pkgs.pam-reattach
-        pkgs.tmux
-        pkgs.htop
-      ];
+      # environment.systemPackages = [
+      #   pkgs.vim
+      #   pkgs.zoxide
+      #   pkgs.ripgrep
+      #   pkgs.fd
+      #   pkgs.curl
+      #   pkgs.eza
+      #   pkgs.fzf
+      #   pkgs.git
+      #   pkgs.nodejs_22
+      #   pkgs.go
+      #   pkgs.bat
+      #   pkgs.cargo
+      #   pkgs.rustc
+      #   # pkgs.lua
+      #   pkgs.luajit
+      #   # pkgs.luajit_2_0
+      #   pkgs.luarocks
+      #   pkgs.pam-reattach
+      #   pkgs.tmux
+      #   pkgs.htop
+      # ];
+
       # environment.shells = [ pkgs.bash pkgs.zsh ];
       # environment.loginShell = pkgs.zsh;
       # environment.systemPath = [ "/opt/homebrew/bin" ];
       # environment.pathsToLink = [ "/Applications" ];
       # services.nix-daemon.enable = true;
       # nix.settings.experimental-features = "nix-command flakes";
+
+      # users.users.${user} = {
+      #     home = "/Users/${user}";
+      #     shell = pkgs.zsh;
+      #   };
 
       nix = {
         settings = {
@@ -143,17 +149,34 @@
     darwinConfigurations."Pantorns-MacBook-Air" = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       pkgs = import inputs.nixpkgs {system = "aarch64-darwin";};
-
+      specialArgs = {inherit inputs;};
       modules = [
         ./machines/zen/configuration.nix
         ./machines/zen/homebrew.nix
+
         configuration
 
-        home-manager.darwinModules.home-manager
+        # home-manager.darwinModules.home-manager
+        # {
+        #   extraSpecialArgs = {inherit inputs;};
+        #   home-manager.useGlobalPkgs = true;
+        #   home-manager.useUserPackages = true;
+        #   home-manager.users.pantornchuavallee = import ./home.nix;
+        # }
+         home-manager.darwinModule
         {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.pantornchuavallee = import ./home.nix;
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            # makes all inputs available in imported files for hm
+            extraSpecialArgs = {inherit inputs;};
+            users.pantornchuavallee = {...}: {
+              # imports = [shared ./home-manager/eve];
+              imports = [./home.nix];
+              home.file.".hushlogin".text = "";
+              # home.stateVersion = stateVersion;
+            };
+          };
         }
 
         nix-homebrew.darwinModules.nix-homebrew
@@ -171,7 +194,6 @@
               "homebrew/homebrew-bundle" = homebrew-bundle;
             };
             mutableTaps = false;
-            ignoreExisting = true;
             autoMigrate = true;
           };
         }

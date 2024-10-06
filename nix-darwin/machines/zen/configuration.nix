@@ -11,6 +11,26 @@
     systemPackages = with pkgs; [
       # 1Password has to be installed system-wide
       # _1password
+        pkgs.vim
+        pkgs.zoxide
+        pkgs.ripgrep
+        pkgs.fd
+        pkgs.curl
+        pkgs.eza
+        pkgs.fzf
+        pkgs.git
+        pkgs.nodejs_22
+        pkgs.go
+        pkgs.bat
+        pkgs.cargo
+        pkgs.rustc
+        # pkgs.lua
+        pkgs.luajit
+        # pkgs.luajit_2_0
+        pkgs.luarocks
+        pkgs.pam-reattach
+        pkgs.tmux
+        pkgs.htop
     ];
   };
   services = {
