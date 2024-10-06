@@ -16,28 +16,28 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-homebrew = {
-      url = "github:zhaofengli/nix-homebrew";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nix-darwin.follows = "darwin";
-    };
-    homebrew-core = {
-      url = "github:homebrew/homebrew-core";
-      flake = false;
-    };
-    homebrew-cask = {
-      url = "github:homebrew/homebrew-cask";
-      flake = false;
-    };
-    homebrew-services = {
-      url = "github:homebrew/homebrew-services";
-      flake = false;
-    };
-
-    homebrew-bundle = {
-      url = "github:homebrew/homebrew-bundle";
-      flake = false;
-    };
+    # nix-homebrew = {
+    #   url = "github:zhaofengli/nix-homebrew";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.nix-darwin.follows = "darwin";
+    # };
+    # homebrew-core = {
+    #   url = "github:homebrew/homebrew-core";
+    #   flake = false;
+    # };
+    # homebrew-cask = {
+    #   url = "github:homebrew/homebrew-cask";
+    #   flake = false;
+    # };
+    # homebrew-services = {
+    #   url = "github:homebrew/homebrew-services";
+    #   flake = false;
+    # };
+    #
+    # homebrew-bundle = {
+    #   url = "github:homebrew/homebrew-bundle";
+    #   flake = false;
+    # };
   };
 
   outputs = {
@@ -45,11 +45,11 @@
     nix-darwin,
     nixpkgs,
     home-manager,
-    nix-homebrew,
-    homebrew-core,
-    homebrew-cask,
-    homebrew-services,
-    homebrew-bundle,
+    # nix-homebrew,
+    # homebrew-core,
+    # homebrew-cask,
+    # homebrew-services,
+    # homebrew-bundle,
     ...
   } @ inputs: let
     configuration = {pkgs, ...}: {
@@ -180,24 +180,24 @@
           };
         }
 
-        nix-homebrew.darwinModules.nix-homebrew
-        {
-          nix-homebrew = {
-            # Install Homebrew under the default prefix
-            enable = true;
-            enableRosetta = false;
-            # User owning the Homebrew prefix
-            user = "pantornchuavallee";
-            taps = {
-              "homebrew/homebrew-core" = homebrew-core;
-              "homebrew/homebrew-cask" = homebrew-cask;
-              "homebrew/homebrew-services" = homebrew-services;
-              "homebrew/homebrew-bundle" = homebrew-bundle;
-            };
-            mutableTaps = false;
-            # autoMigrate = true;
-          };
-        }
+        # nix-homebrew.darwinModules.nix-homebrew
+        # {
+        #   nix-homebrew = {
+        #     # Install Homebrew under the default prefix
+        #     enable = true;
+        #     enableRosetta = false;
+        #     # User owning the Homebrew prefix
+        #     user = "pantornchuavallee";
+        #     taps = {
+        #       "homebrew/homebrew-core" = homebrew-core;
+        #       "homebrew/homebrew-cask" = homebrew-cask;
+        #       "homebrew/homebrew-services" = homebrew-services;
+        #       "homebrew/homebrew-bundle" = homebrew-bundle;
+        #     };
+        #     mutableTaps = false;
+        #     # autoMigrate = true;
+        #   };
+        # }
       ];
     };
 
