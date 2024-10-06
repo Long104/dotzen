@@ -10,6 +10,28 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-homebrew = {
+      url = "github:zhaofengli/nix-homebrew";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nix-darwin.follows = "darwin";
+    };
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
+    homebrew-services = {
+      url = "github:homebrew/homebrew-services";
+      flake = false;
+    };
+    homebrew-bundle = {
+      url = "github:homebrew/homebrew-bundle";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {
@@ -17,6 +39,11 @@
     nix-darwin,
     nixpkgs,
     home-manager,
+    nix-homebrew,
+    homebrew-core,
+    homebrew-cask,
+    homebrew-services,
+    homebrew-bundle,
   }: let
     configuration = {pkgs, ...}: {
       environment.systemPackages = [
@@ -90,22 +117,20 @@
       #   screensaver.askForPasswordDelay = 10;
       # };
 
-      homebrew = {
-        enable = true;
-
-        user = "pantornchuavallee"; # Replace with your username
-        # group = "admin";
-        prefixes = ["/opt/homebrew"]; # Adjust this to match your Homebrew installation
-
-        caskArgs.no_quarantine = true;
-        global.brewfile = true;
-        masApps = {};
-        # casks = [ "raycast" "amethyst" ];
-        casks = ["visual-studio-code" "docker" "wezterm"];
-        # taps = [ "fujiapple852/trippy" ];
-        # brews = [ "trippy" ];
-        brews = ["imagemagick"];
-      };
+      # homebrew = {
+      #   enable = true;
+      #
+      #   # group = "admin";
+      #
+      #   caskArgs.no_quarantine = true;
+      #   global.brewfile = true;
+      #   masApps = {};
+      #   # casks = [ "raycast" "amethyst" ];
+      #   casks = ["visual-studio-code" "docker" "wezterm"];
+      #   # taps = [ "fujiapple852/trippy" ];
+      #   # brews = [ "trippy" ];
+      #   brews = ["imagemagick"];
+      # };
     };
   in {
     darwinConfigurations."Pantorns-MacBook-Air" = nix-darwin.lib.darwinSystem {
@@ -116,11 +141,30 @@
         ./machines/zen/configuration.nix
         # ./machines/zen/homebrew.nix
         configuration
+
         home-manager.darwinModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.pantornchuavallee = import ./home.nix;
+        }
+
+        nix-homebrew.darwinModules.nix-homebrew
+        {
+          nix-homebrew = {
+            # Install Homebrew under the default prefix
+            enable = true;
+            enableRosetta = false;
+            # User owning the Homebrew prefix
+            user = "pantornchuavallee";
+            taps = {
+              "homebrew/homebrew-core" = homebrew-core;
+              "homebrew/homebrew-cask" = homebrew-cask;
+              "homebrew/homebrew-services" = homebrew-services;
+              "homebrew/homebrew-bundle" = homebrew-bundle;
+            };
+            mutableTaps = false;
+          };
         }
       ];
     };
