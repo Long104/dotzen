@@ -20,6 +20,7 @@
     pkgs.gum
     pkgs.neovim
     pkgs.lazygit
+    # pkgs.raycast
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -33,6 +34,7 @@
     # ".config/nix-darwin".source = /Users/zen/dotfiles/nix-darwin;
     # ".tmux.conf".source = /Users/zen/dotfiles/.tmux.conf;
     # ".config/sesh".source = /Users/zen/dotfiles/sesh;
+    # ".config/raycast".source = ../raycast;
     ".zshrc".source = ../zshrc/.zshrc;
     ".config/wezterm".source = ../wezterm;
     ".config/starship".source = ../starship.toml;
@@ -50,8 +52,6 @@
     "/run/current-system/sw/bin"
     "$HOME/.nix-profile/bin"
   ];
-
-  imports = [<home-manager/nix-darwin>];
 
   programs.home-manager.enable = true;
   programs.git = {

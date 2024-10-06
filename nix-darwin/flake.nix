@@ -37,15 +37,38 @@
         pkgs.luajit
         # pkgs.luajit_2_0
         pkgs.luarocks
+        pkgs.pam-reattach
         pkgs.tmux
       ];
       # environment.shells = [ pkgs.bash pkgs.zsh ];
       # environment.loginShell = pkgs.zsh;
       # environment.systemPath = [ "/opt/homebrew/bin" ];
       # environment.pathsToLink = [ "/Applications" ];
-      services.nix-daemon.enable = true;
-      nix.settings.experimental-features = "nix-command flakes";
-      programs.zsh.enable = true;
+      # services.nix-daemon.enable = true;
+      # nix.settings.experimental-features = "nix-command flakes";
+
+      nix = {
+        settings = {
+          allowed-users = ["root" "pantornchuavallee"];
+          trusted-users = ["root" "pantornchuavallee"];
+          experimental-features = ["nix-command" "flakes"];
+
+          # https://github.com/NixOS/nix/issues/7273
+          auto-optimise-store = false;
+
+          # needed for devenv to enable cachix
+          accept-flake-config = true;
+        };
+        gc = {
+          automatic = true;
+          interval = {
+            Hour = 12;
+          };
+          options = "--delete-old";
+        };
+      };
+
+      # programs.zsh.enable = true;
       system.configurationRevision = self.rev or self.dirtyRev or null;
       system.stateVersion = 5;
       # system.stateVersion = 4;
@@ -55,17 +78,17 @@
 
       home-manager.backupFileExtension = "backup";
       nix.configureBuildUsers = true;
-      nix.useDaemon = true;
+      # nix.useDaemon = true;
 
-      system.defaults = {
-        dock.autohide = true;
-        dock.mru-spaces = false;
-        finder.AppleShowAllExtensions = true;
-        finder.FXPreferredViewStyle = "clmv";
-        loginwindow.LoginwindowText = "zen way";
-        screencapture.location = "~/Pictures/screenshots";
-        screensaver.askForPasswordDelay = 10;
-      };
+      # system.defaults = {
+      #   dock.autohide = true;
+      #   dock.mru-spaces = false;
+      #   finder.AppleShowAllExtensions = true;
+      #   finder.FXPreferredViewStyle = "clmv";
+      #   loginwindow.LoginwindowText = "zen way";
+      #   screencapture.location = "~/Pictures/screenshots";
+      #   screensaver.askForPasswordDelay = 10;
+      # };
 
       homebrew = {
         enable = true;
@@ -85,6 +108,8 @@
       pkgs = import inputs.nixpkgs {system = "aarch64-darwin";};
 
       modules = [
+        # ./machines/zen/configuration.nix
+        # ./machines/zen/homebrew.nix
         configuration
         home-manager.darwinModules.home-manager
         {
