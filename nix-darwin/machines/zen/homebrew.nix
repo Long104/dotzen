@@ -26,57 +26,27 @@
       "visual-studio-code"
       "docker"
       "wezterm"
-
-      # -- essentials --
-      # "1password"
-      # "google-chrome"
-      # "raycast"
-      # "vlc"
-      #
-      # # -- utilities --
-      # "surfshark"
-      # "finicky" # choose browser on each link
-      # "vmware-fusion"
-      # "adobe-acrobat-reader"
-      # "dropbox"
-      # "google-drive"
-      # "teamviewer"
-      # "todoist"
-      # "yubico-yubikey-manager"
-      # "trezor-suite"
-      # "kindavim"
-      # "gimp"
-      # "chatgpt"
-      #
-      # # -- 3d printing
-      # "bambu-studio"
-      # "orcaslicer"
-      #
-      # # -- communication --
-      # "telegram"
-      # "signal"
-      # "discord"
-      # "whatsapp"
-      # "element"
-      #
-      # # -- work --
-      # "firefox"
-      # "krisp"
-      # "leapp"
-      # "slack"
-      # "docker"
-      # "microsoft-teams"
-      # "postman"
+      "arc"
+      "raycast"
+      "chatgpt"
+      "whatsapp"
+      "postman"
+      "zirixcz/vesktop/vesktop"
+      "spotify"
     ];
 
     brews = [
       "imagemagick"
+      "asdf"
+      "luarocks"
     ];
+
     # masApps = {
     #   "1Password for Safari" = 1569813296;
     #   "Dark Reader for Safari" = 1438243180;
     #   "WiFi Signal" = 525912054;
     #   "Xcode" = 497799835;
     # };
+
   };
 }

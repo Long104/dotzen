@@ -25,14 +25,11 @@
       pkgs.bat
       pkgs.cargo
       pkgs.rustc
-      # pkgs.lua
       pkgs.luajit
-      # pkgs.luajit_2_0
-      pkgs.luarocks
       pkgs.pam-reattach
       pkgs.tmux
       pkgs.htop
-      pkgs.gotop
+     # pkgs.gotop
     ];
   };
   services = {

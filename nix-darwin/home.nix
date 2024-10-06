@@ -11,7 +11,6 @@
 
   # Makes sense for user specific applications that shouldn't be available system-wide
   home.packages = [
-    # pkgs.starship
     pkgs.atuin
     pkgs.fastfetch
     pkgs.yazi
@@ -21,8 +20,6 @@
     pkgs.neovim
     pkgs.lazygit
     pkgs.atac
-    pkgs.luajitPackages.magick
-    # pkgs.raycast
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
