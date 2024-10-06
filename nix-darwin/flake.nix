@@ -164,7 +164,7 @@
         #   home-manager.useUserPackages = true;
         #   home-manager.users.pantornchuavallee = import ./home.nix;
         # }
-         home-manager.darwinModule
+        home-manager.darwinModule
         {
           home-manager = {
             useGlobalPkgs = true;

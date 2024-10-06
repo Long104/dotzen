@@ -158,19 +158,18 @@
     # });
 
     # https://github.com/zhaofengli/nix-homebrew/issues/3#issuecomment-1622240992
-    # activationScripts = {
-    #   extraUserActivation.text = lib.mkOrder 1501 (lib.concatStringsSep "\n" (lib.mapAttrsToList (prefix: d:
-    #     if d.enable
-    #     then ''
-    #       sudo chown -R ${config.nix-homebrew.user} ${prefix}/bin
-    #       sudo chgrp -R ${config.nix-homebrew.group} ${prefix}/bin
-    #     ''
-    #     else "")
-    #   config.nix-homebrew.prefixes));
+    activationScripts = {
+      extraUserActivation.text = lib.mkOrder 1501 (lib.concatStringsSep "\n" (lib.mapAttrsToList (prefix: d:
+        if d.enable
+        then ''
+          sudo chown -R ${config.nix-homebrew.user} ${prefix}/bin
+          sudo chgrp -R ${config.nix-homebrew.group} ${prefix}/bin
+        ''
+        else "") config.nix-homebrew.prefixes));
     # postActivation.text = ''
     #   ${pkgs.skhd}/bin/skhd -r
     # '';
-    # };
+    };
   };
 
   security.pam.enableSudoTouchId = true;
