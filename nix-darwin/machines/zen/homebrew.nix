@@ -5,14 +5,18 @@
     global = {
       # nix-homebrew is handling homebrew updates
       autoUpdate = false;
-
       brewfile = true;
     };
     onActivation = {
       # "zap" removes manually installed brews and casks
-      cleanup = "zap";
       # nix-homebrew is handling homebrew updates
-      autoUpdate = false;
+
+      # cleanup = "zap";
+      # autoUpdate = false;
+      # upgrade = true;
+
+      autoUpdate = true;
+      cleanup = "uninstall";
       upgrade = true;
     };
 
