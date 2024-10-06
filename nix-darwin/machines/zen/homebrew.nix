@@ -1,7 +1,7 @@
 {config, ...}: {
   homebrew = {
     enable = true;
-    # taps = builtins.attrNames config.nix-homebrew.taps;
+    taps = builtins.attrNames config.nix-homebrew.taps;
     global = {
       # nix-homebrew is handling homebrew updates
       autoUpdate = false;

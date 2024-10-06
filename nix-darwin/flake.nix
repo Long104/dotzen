@@ -42,7 +42,8 @@
 
   outputs = {
     self,
-    nix-darwin,
+    # nix-darwin,
+    darwin,
     nixpkgs,
     home-manager,
     nix-homebrew,
@@ -53,40 +54,15 @@
     ...
   } @ inputs: let
     configuration = {pkgs, ...}: {
-      # environment.systemPackages = [
-      #   pkgs.vim
-      #   pkgs.zoxide
-      #   pkgs.ripgrep
-      #   pkgs.fd
-      #   pkgs.curl
-      #   pkgs.eza
-      #   pkgs.fzf
-      #   pkgs.git
-      #   pkgs.nodejs_22
-      #   pkgs.go
-      #   pkgs.bat
-      #   pkgs.cargo
-      #   pkgs.rustc
-      #   # pkgs.lua
-      #   pkgs.luajit
-      #   # pkgs.luajit_2_0
-      #   pkgs.luarocks
-      #   pkgs.pam-reattach
-      #   pkgs.tmux
-      #   pkgs.htop
-      # ];
-
       # environment.shells = [ pkgs.bash pkgs.zsh ];
       # environment.loginShell = pkgs.zsh;
       # environment.systemPath = [ "/opt/homebrew/bin" ];
       # environment.pathsToLink = [ "/Applications" ];
-      # services.nix-daemon.enable = true;
-      # nix.settings.experimental-features = "nix-command flakes";
 
-      # users.users.${user} = {
-      #     home = "/Users/${user}";
-      #     shell = pkgs.zsh;
-      #   };
+      users.users.pantornchuavallee = {
+          home = "/Users/zen";
+          shell = pkgs.zsh;
+        };
 
       nix = {
         settings = {
@@ -109,45 +85,16 @@
         };
       };
 
-      # programs.zsh.enable = true;
       system.configurationRevision = self.rev or self.dirtyRev or null;
       system.stateVersion = 5;
-      # system.stateVersion = 4;
       nixpkgs.hostPlatform = "x86_64-darwin";
-      # security.pam.enableSudoTouchIdAuth = true;
-      users.users.pantornchuavallee.home = "/Users/zen";
+      # users.users.pantornchuavallee.home = "/Users/zen";
 
       home-manager.backupFileExtension = "backup";
       nix.configureBuildUsers = true;
-      # nix.useDaemon = true;
-
-      # system.defaults = {
-      #   dock.autohide = true;
-      #   dock.mru-spaces = false;
-      #   finder.AppleShowAllExtensions = true;
-      #   finder.FXPreferredViewStyle = "clmv";
-      #   loginwindow.LoginwindowText = "zen way";
-      #   screencapture.location = "~/Pictures/screenshots";
-      #   screensaver.askForPasswordDelay = 10;
-      # };
-
-      # homebrew = {
-      #   enable = true;
-      #
-      #   # group = "admin";
-      #
-      #   caskArgs.no_quarantine = true;
-      #   global.brewfile = true;
-      #   masApps = {};
-      #   # casks = [ "raycast" "amethyst" ];
-      #   casks = ["visual-studio-code" "docker" "wezterm"];
-      #   # taps = [ "fujiapple852/trippy" ];
-      #   # brews = [ "trippy" ];
-      #   brews = ["imagemagick"];
-      # };
     };
   in {
-    darwinConfigurations."Pantorns-MacBook-Air" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."Pantorns-MacBook-Air" = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       pkgs = import inputs.nixpkgs {system = "aarch64-darwin";};
       specialArgs = {inherit inputs;};
@@ -157,13 +104,6 @@
 
         configuration
 
-        # home-manager.darwinModules.home-manager
-        # {
-        #   extraSpecialArgs = {inherit inputs;};
-        #   home-manager.useGlobalPkgs = true;
-        #   home-manager.useUserPackages = true;
-        #   home-manager.users.pantornchuavallee = import ./home.nix;
-        # }
         home-manager.darwinModule
         {
           home-manager = {
@@ -175,7 +115,7 @@
               # imports = [shared ./home-manager/eve];
               imports = [./home.nix];
               home.file.".hushlogin".text = "";
-              # home.stateVersion = stateVersion;
+              home.stateVersion = "23.05"; # Please read the comment before changing.
             };
           };
         }
