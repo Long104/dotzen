@@ -18,13 +18,10 @@
 
     caskArgs = {no_quarantine = true;};
 
-    brews = ["imagemagick"];
-
     casks = [
       "visual-studio-code"
       "docker"
       "wezterm"
-
 
       # -- essentials --
       # "1password"
@@ -66,6 +63,10 @@
       # "docker"
       # "microsoft-teams"
       # "postman"
+    ];
+
+    brews = [
+      "imagemagick"
     ];
     # masApps = {
     #   "1Password for Safari" = 1569813296;

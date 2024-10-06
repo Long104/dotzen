@@ -8,29 +8,31 @@
     ./touch-id.nix
   ];
   environment = {
-    systemPackages = with pkgs; [
+    # systemPackages = with pkgs; [
+    systemPackages = [
       # 1Password has to be installed system-wide
       # _1password
-        pkgs.vim
-        pkgs.zoxide
-        pkgs.ripgrep
-        pkgs.fd
-        pkgs.curl
-        pkgs.eza
-        pkgs.fzf
-        pkgs.git
-        pkgs.nodejs_22
-        pkgs.go
-        pkgs.bat
-        pkgs.cargo
-        pkgs.rustc
-        # pkgs.lua
-        pkgs.luajit
-        # pkgs.luajit_2_0
-        pkgs.luarocks
-        pkgs.pam-reattach
-        pkgs.tmux
-        pkgs.htop
+      pkgs.vim
+      pkgs.zoxide
+      pkgs.ripgrep
+      pkgs.fd
+      pkgs.curl
+      pkgs.eza
+      pkgs.fzf
+      pkgs.git
+      pkgs.nodejs_22
+      pkgs.go
+      pkgs.bat
+      pkgs.cargo
+      pkgs.rustc
+      # pkgs.lua
+      pkgs.luajit
+      # pkgs.luajit_2_0
+      pkgs.luarocks
+      pkgs.pam-reattach
+      pkgs.tmux
+      pkgs.htop
+      pkgs.gotop
     ];
   };
   services = {
@@ -156,19 +158,19 @@
     # });
 
     # https://github.com/zhaofengli/nix-homebrew/issues/3#issuecomment-1622240992
-    activationScripts = {
-      extraUserActivation.text = lib.mkOrder 1501 (lib.concatStringsSep "\n" (lib.mapAttrsToList (prefix: d:
-        if d.enable
-        then ''
-          sudo chown -R ${config.nix-homebrew.user} ${prefix}/bin
-          sudo chgrp -R ${config.nix-homebrew.group} ${prefix}/bin
-        ''
-        else "")
-      config.nix-homebrew.prefixes));
-      # postActivation.text = ''
-      #   ${pkgs.skhd}/bin/skhd -r
-      # '';
-    };
+    # activationScripts = {
+    #   extraUserActivation.text = lib.mkOrder 1501 (lib.concatStringsSep "\n" (lib.mapAttrsToList (prefix: d:
+    #     if d.enable
+    #     then ''
+    #       sudo chown -R ${config.nix-homebrew.user} ${prefix}/bin
+    #       sudo chgrp -R ${config.nix-homebrew.group} ${prefix}/bin
+    #     ''
+    #     else "")
+    #   config.nix-homebrew.prefixes));
+    # postActivation.text = ''
+    #   ${pkgs.skhd}/bin/skhd -r
+    # '';
+    # };
   };
 
   security.pam.enableSudoTouchId = true;
