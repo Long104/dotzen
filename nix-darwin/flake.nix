@@ -19,7 +19,7 @@
     nix-homebrew = {
       url = "github:zhaofengli/nix-homebrew";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nix-darwin.follows = "nix-darwin";
+      inputs.nix-darwin.follows = "darwin";
     };
     homebrew-core = {
       url = "github:homebrew/homebrew-core";
@@ -39,7 +39,7 @@
     };
   };
 
-  outputs = inputs @ {
+  outputs = {
     self,
     nix-darwin,
     nixpkgs,
@@ -49,7 +49,8 @@
     homebrew-cask,
     homebrew-services,
     homebrew-bundle,
-  }: let
+    ...
+  } @ inputs: let
     configuration = {pkgs, ...}: {
       environment.systemPackages = [
         pkgs.vim
@@ -71,6 +72,7 @@
         pkgs.luarocks
         pkgs.pam-reattach
         pkgs.tmux
+        pkgs.htop
       ];
       # environment.shells = [ pkgs.bash pkgs.zsh ];
       # environment.loginShell = pkgs.zsh;

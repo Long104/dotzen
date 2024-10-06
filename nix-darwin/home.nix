@@ -20,6 +20,7 @@
     pkgs.gum
     pkgs.neovim
     pkgs.lazygit
+    pkgs.atac
     # pkgs.raycast
   ];
 
