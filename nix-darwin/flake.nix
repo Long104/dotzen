@@ -92,6 +92,11 @@
 
       homebrew = {
         enable = true;
+
+        user = "pantornchuavallee"; # Replace with your username
+        # group = "admin";
+        prefixes = ["/opt/homebrew"]; # Adjust this to match your Homebrew installation
+
         caskArgs.no_quarantine = true;
         global.brewfile = true;
         masApps = {};
