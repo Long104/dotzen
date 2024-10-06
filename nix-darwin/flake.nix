@@ -29,15 +29,15 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
-    # homebrew-services = {
-    #   url = "github:homebrew/homebrew-services";
-    #   flake = false;
-    # };
+    homebrew-services = {
+      url = "github:homebrew/homebrew-services";
+      flake = false;
+    };
 
-    # homebrew-bundle = {
-    #   url = "github:homebrew/homebrew-bundle";
-    #   flake = false;
-    # };
+    homebrew-bundle = {
+      url = "github:homebrew/homebrew-bundle";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -191,8 +191,8 @@
             taps = {
               "homebrew/homebrew-core" = homebrew-core;
               "homebrew/homebrew-cask" = homebrew-cask;
-              # "homebrew/homebrew-services" = homebrew-services;
-              # "homebrew/homebrew-bundle" = homebrew-bundle;
+              "homebrew/homebrew-services" = homebrew-services;
+              "homebrew/homebrew-bundle" = homebrew-bundle;
             };
             mutableTaps = false;
             # autoMigrate = true;
