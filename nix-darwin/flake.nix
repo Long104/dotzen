@@ -114,7 +114,7 @@
       system.stateVersion = 5;
       # system.stateVersion = 4;
       nixpkgs.hostPlatform = "x86_64-darwin";
-      security.pam.enableSudoTouchIdAuth = true;
+      # security.pam.enableSudoTouchIdAuth = true;
       users.users.pantornchuavallee.home = "/Users/zen";
 
       home-manager.backupFileExtension = "backup";
