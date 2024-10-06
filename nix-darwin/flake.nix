@@ -171,6 +171,8 @@
               "homebrew/homebrew-bundle" = homebrew-bundle;
             };
             mutableTaps = false;
+            ignoreExisting = true;
+            autoMigrate = true;
           };
         }
       ];

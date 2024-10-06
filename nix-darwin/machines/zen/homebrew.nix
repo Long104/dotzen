@@ -6,7 +6,7 @@
       # nix-homebrew is handling homebrew updates
       autoUpdate = false;
 
-      # brewfile = true;
+      brewfile = true;
     };
     onActivation = {
       # "zap" removes manually installed brews and casks
@@ -15,6 +15,7 @@
       autoUpdate = false;
       upgrade = true;
     };
+
     caskArgs = {no_quarantine = true;};
 
     brews = ["imagemagick"];
@@ -23,6 +24,7 @@
       "visual-studio-code"
       "docker"
       "wezterm"
+
 
       # -- essentials --
       # "1password"
