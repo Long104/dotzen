@@ -49,7 +49,7 @@
     homebrew-core,
     homebrew-cask,
     homebrew-services,
-    # homebrew-bundle,
+    homebrew-bundle,
     ...
   } @ inputs: let
     configuration = {pkgs, ...}: {
