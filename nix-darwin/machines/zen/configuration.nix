@@ -19,7 +19,7 @@
       pkgs.curl
       pkgs.eza
       pkgs.fzf
-      pkgs.git
+      # pkgs.git
       pkgs.nodejs_22
       pkgs.go
       pkgs.bat
