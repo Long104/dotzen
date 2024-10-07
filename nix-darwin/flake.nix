@@ -60,9 +60,9 @@
       # environment.pathsToLink = [ "/Applications" ];
 
       users.users.pantornchuavallee = {
-          home = "/Users/pantornchuavallee";
-          shell = pkgs.zsh;
-        };
+        home = "/Users/pantornchuavallee";
+        shell = pkgs.zsh;
+      };
 
       nix = {
         settings = {
@@ -88,6 +88,7 @@
       system.configurationRevision = self.rev or self.dirtyRev or null;
       system.stateVersion = 5;
       nixpkgs.hostPlatform = "x86_64-darwin";
+
 
       home-manager.backupFileExtension = "backup";
       nix.configureBuildUsers = true;
