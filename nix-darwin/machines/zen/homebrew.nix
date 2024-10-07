@@ -31,7 +31,6 @@
       "chatgpt"
       "whatsapp"
       "postman"
-      "zirixcz/vesktop/vesktop"
       "spotify"
     ];
 

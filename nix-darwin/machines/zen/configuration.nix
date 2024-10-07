@@ -29,8 +29,9 @@
       pkgs.pam-reattach
       pkgs.tmux
       pkgs.htop
-     # pkgs.gotop
+      # pkgs.gotop
     ];
+    pathsToLink = ["/Applications"];
   };
   services = {
     nix-daemon.enable = true;
@@ -163,7 +164,8 @@
           sudo chown -R ${config.nix-homebrew.user} ${prefix}/bin
           sudo chgrp -R ${config.nix-homebrew.group} ${prefix}/bin
         ''
-        else "") config.nix-homebrew.prefixes));
+        else "")
+      config.nix-homebrew.prefixes));
     };
   };
 

@@ -20,10 +20,31 @@
     pkgs.neovim
     pkgs.lazygit
     pkgs.atac
+    pkgs.vesktop
   ];
 
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
+  # Install MacOS applications to the user environment if the targetPlatform is Darwin
+ # my.home = { config, pkgs, ... }: {
+ #    home.file."Applications/Home Manager Apps".source = let
+ #      apps = pkgs.buildEnv {
+ #        name = "home-manager-applications";
+ #        paths = config.home.packages;
+ #        pathsToLink = "/Applications";
+ #      };
+ #    in "${apps}/Applications";
+ #
+ #    home.sessionPath = [ "$HOME/.local/bin" ];
+ #  };  # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
+  # Install macOS applications if the targetPlatform is Darwin
+  home.file."Applications/Home Manager Apps".source = let
+    apps = pkgs.buildEnv {
+      name = "home-manager-applications";
+      paths = config.home.packages;
+      pathsToLink = [ "/Applications" ];
+    };
+  in "${apps}/Applications";
+
   home.file = {
     ".zshrc".source = ../zshrc/.zshrc;
     ".config/wezterm".source = ../wezterm;
