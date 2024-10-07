@@ -33,7 +33,7 @@ zinit lucid light-mode for \
 
 
 
-zinit lucid light-mode from"gh-r" as"command" for \
+zinit wait lucid light-mode from"gh-r" as"command" for \
      atload'
         eval "$(snm env zsh)"
         alias n="snm"
@@ -44,9 +44,9 @@ zinit lucid light-mode from"gh-r" as"command" for \
 
 
 # Add in zsh plugins
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
+# zinit light zsh-users/zsh-syntax-highlighting
+# zinit light zsh-users/zsh-completions
+# zinit light zsh-users/zsh-autosuggestions
 
 zinit wait lucid for \
     light-mode blockf atpull'zinit creinstall -q .' \
