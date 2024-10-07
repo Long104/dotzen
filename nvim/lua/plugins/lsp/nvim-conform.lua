@@ -22,7 +22,9 @@ return {
         lua = { 'stylua' },
         python = { 'isort', 'black' },
         nix = { 'alejandra' },
-      },
+        bash = {'shfmt'},
+        zsh = {'shfmt'},
+              },
       -- on save
       -- format_on_save = {
       --   lsp_fallback = true,

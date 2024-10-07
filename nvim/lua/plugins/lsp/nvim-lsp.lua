@@ -274,6 +274,15 @@ return {
           },
         }
       end,
+
+
+      ['bashsl'] = function()
+        lspconfig['bashsl'].setup {
+          capabilities = capabilities,
+
+          filetypes = { 'sh', 'zsh', 'bash' },
+        }
+      end,
     }
 
     local function clear_lsp_group()

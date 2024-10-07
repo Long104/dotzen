@@ -15,13 +15,16 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
+
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
 
+# Load starship with zinit
 zinit lucid light-mode for \
     as"command" from"gh-r" atload'eval "$(starship init zsh)"' \
     starship/starship \
+
 
 
 zinit lucid light-mode from"gh-r" as"command" for \
@@ -118,7 +121,6 @@ ut=reverse --border --exit-0)
 bindkey -s ^a "nvims\n"
 
 
-# Check if TMUX is not set
 if [ -z "$TMUX" ]; then
     # Check if the tmux session 'code' exists
     if tmux has-session -t code 2>/dev/null; then

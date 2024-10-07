@@ -56,13 +56,14 @@ return {
         -- 'ts_ls',
         'nil_ls',
         -- 'ocamllsp'
+        'bashls',
       },
     }
 
     mason_tool_installer.setup {
       ensure_installed = {
         'shfmt',
-        'pint',
+        -- 'pint',
         'phpcs',
         'php-cs-fixer',
         'prettier',
