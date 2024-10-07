@@ -9,8 +9,8 @@ fi
 
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
     git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
-else
-    echo "TPM is already installed."
+# else
+    # echo "TPM is already installed."
 fi
 
 export PATH="/usr/local/bin:/usr/bin:$PATH"
