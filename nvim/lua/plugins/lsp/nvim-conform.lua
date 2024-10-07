@@ -6,8 +6,8 @@ return {
 
     conform.setup {
       formatters_by_ft = {
-        -- php = { 'pint', 'php_cs_fixer'},
-        php = { "prettier" },
+        php = { 'php_cs_fixer'},
+        -- php = { "prettier" },
         blade = { "blade-formatter", "prettier" },
         javascript = { "prettier" },
         typescript = { "prettier" },

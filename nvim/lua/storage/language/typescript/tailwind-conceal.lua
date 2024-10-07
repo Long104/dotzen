@@ -2,7 +2,7 @@
 return {
   'razak17/tailwind-fold.nvim',
   keys = { {
-    '<leader>tf',
+    '<leader>tw',
     '<cmd>TailwindFoldToggle<cr>',
     desc = 'Toggle Tailwind Fold',
   } },

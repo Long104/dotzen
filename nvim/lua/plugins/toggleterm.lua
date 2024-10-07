@@ -11,7 +11,6 @@ return {
       desc = 'lazygit',
     },
     {
-
       mode = {'n','t'},
       '<leader>th',
       "<Cmd>exe v:count1 . 'ToggleTerm size=9 direction=horizontal'<CR>",
