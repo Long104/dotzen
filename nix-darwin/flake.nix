@@ -60,7 +60,7 @@
       # environment.pathsToLink = [ "/Applications" ];
 
       users.users.pantornchuavallee = {
-          home = "/Users/zen";
+          home = "/Users/pantornchuavallee";
           shell = pkgs.zsh;
         };
 
@@ -88,7 +88,6 @@
       system.configurationRevision = self.rev or self.dirtyRev or null;
       system.stateVersion = 5;
       nixpkgs.hostPlatform = "x86_64-darwin";
-      # users.users.pantornchuavallee.home = "/Users/zen";
 
       home-manager.backupFileExtension = "backup";
       nix.configureBuildUsers = true;
