@@ -32,6 +32,7 @@
       "whatsapp"
       "postman"
       "spotify"
+      "aldente"
     ];
 
     brews = [
@@ -46,6 +47,5 @@
     #   "WiFi Signal" = 525912054;
     #   "Xcode" = 497799835;
     # };
-
   };
 }
