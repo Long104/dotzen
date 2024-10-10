@@ -46,6 +46,9 @@
       # "Dark Reader for Safari" = 1438243180;
       # "WiFi Signal" = 525912054;
       # "Xcode" = 497799835;
+
+      # "Microsoft Excel" = 462058435;
+      # "Microsoft Word" = 462054704;
       "LINE" = 539883307;
     };
   };
