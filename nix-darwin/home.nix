@@ -73,7 +73,7 @@ in {
     pkgs.atac
     pkgs.vesktop
     pkgs.imagemagick
-    pkgs.lua51Packages.luamagick
+    # pkgs.lua51Packages.luamagick
   ];
 
   home.file = {
