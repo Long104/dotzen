@@ -42,7 +42,7 @@
       "luarocks"
       "pkg-config"
       "luajit"
-      "brew install lua"
+      "lua"
     ];
 
     masApps = {
