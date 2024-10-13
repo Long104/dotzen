@@ -141,7 +141,7 @@ return {
           { action = 'lua require("persistence").load()',desc = " Restore Session", icon = " ", key = "r" },
           { action = 'lua require("persistence").select()',              desc = " Selects Session", icon = " ", key = "s" },
           { action = 'lua require("persistence").load({last = true})',              desc = " Lastest Session", icon = " ", key = "l" },
-          { action = 'lua require("persistence").stop()',  desc = "Deletes Session", icon = " ", key = "d" },
+          { action = 'lua require("persistence").stop()',  desc = " Deletes Session", icon = " ", key = "d" },
 
           -- { action = "LazyExtras",                                     desc = " Lazy Extras",     icon = " ", key = "x" },
           -- { action = "Lazy",                                           desc = " Lazy",            icon = "󰒲 ", key = "l" },

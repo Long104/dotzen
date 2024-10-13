@@ -28,7 +28,7 @@ import = ["~/c/deyis-project/.sesh.toml"]
 name = "Home 🏡"
 path = "usr"
 # startup_command = "z"
-# startup_command = "l"
+# startup_command = "nvim"
 
 # [[session]]
 # name = "code 💻"

@@ -60,6 +60,7 @@ in {
   # home.stateVersion = "23.05"; # Please read the comment before changing.
 
   # Makes sense for user specific applications that shouldn't be available system-wide
+  # home.packages = with pkgs; [
   home.packages = [
     pkgs.atuin
     pkgs.fastfetch
@@ -71,6 +72,8 @@ in {
     pkgs.lazygit
     pkgs.atac
     pkgs.vesktop
+    pkgs.imagemagick
+    pkgs.lua51Packages.luamagick
   ];
 
   home.file = {
