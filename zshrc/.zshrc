@@ -27,26 +27,26 @@ autoload -Uz _zinit
 
 
 # Load starship with zinit
-zinit lucid light-mode for \
+zinit wait lucid light-mode for \
     as"command" from"gh-r" atload'eval "$(starship init zsh)"' \
     starship/starship \
 
 
 
-zinit wait lucid light-mode from"gh-r" as"command" for \
-     atload'
-        eval "$(snm env zsh)"
-        alias n="snm"
-    ' mv'snm* -> snm' pick'snm/snm' \
-        @numToStr/snm \
+# zinit wait lucid light-mode from"gh-r" as"command" for \
+#      atload'
+#         eval "$(snm env zsh)"
+#         alias n="snm"
+#     ' mv'snm* -> snm' pick'snm/snm' \
+#         @numToStr/snm \
 
 
 
-# Add LuaRocks binaries to PATH
-eval "$(luarocks path --bin)"
-
-# Set the library path for Homebrew libraries
-export DYLD_LIBRARY_PATH="/opt/homebrew/lib:$DYLD_LIBRARY_PATH"
+# # Add LuaRocks binaries to PATH
+# eval "$(luarocks path --bin)"
+#
+# # Set the library path for Homebrew libraries
+# export DYLD_LIBRARY_PATH="/opt/homebrew/lib:$DYLD_LIBRARY_PATH"
 
 
 
@@ -66,7 +66,7 @@ zinit wait lucid for \
         zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
     " \
         zsh-users/zsh-completions \
-light-mode atload"_zsh_autosuggest_start" \
+    light-mode atload"_zsh_autosuggest_start" \
         zsh-users/zsh-autosuggestions \
     light-mode atinit"
         typeset -gA FAST_HIGHLIGHT;
