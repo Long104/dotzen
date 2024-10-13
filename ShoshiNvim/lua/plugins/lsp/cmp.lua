@@ -1,8 +1,8 @@
 return {
   'hrsh7th/nvim-cmp',
-  -- event = { 'InsertEnter', 'CmdlineEnter' },
+  event = { 'InsertEnter', 'CmdlineEnter' },
   -- event = { 'InsertEnter', 'CmdlineChanged' },
-  event = { 'InsertEnter' },
+  -- event = { 'InsertEnter' },
   dependencies = {
     -- lua
     'folke/lazydev.nvim',
@@ -21,6 +21,7 @@ return {
     -- for markdown
     --
     'f3fora/cmp-spell',
+    'octaltree/cmp-look',
     'hrsh7th/cmp-emoji',
     'uga-rosa/cmp-dictionary',
     --
@@ -239,7 +240,19 @@ return {
 
       sources = cmp.config.sources {
         -- { name = 'vim-dadbod-completion' },
-        { name = 'dictionary', keyword_length = 3, priority = 5, keyword_pattern = [[\w\+]] }, -- from uga-rosa/cmp-dictionary plug { name = 'spell', keyword_length = 3, priority = 5, keyword_pattern = [[\w\+]] },
+        {
+          name = 'look',
+          keyword_length = 2,
+          priority = 3,
+          group_index = 2,
+          option = {
+            convert_case = true,
+            loud = true,
+            dict = '/usr/share/dict/words'
+          },
+        },
+        { name = 'dictionary', keyword_length = 3, priority = 5, keyword_pattern = [[\w\+]] },
+        { name = 'spell', keyword_length = 3, priority = 5, keyword_pattern = [[\w\+]] },
         { name = 'fuzzy_path', priority = 4 }, -- from tzacher
         -- { name = "cmp_tabnine", priority = 8 }
         -- { name = 'copilot', priority = 300, group_index = 1 }, -- copilot suggestions
@@ -248,8 +261,6 @@ return {
         { name = 'path', group_index = 5 }, -- file system paths
         { name = 'buffer', priority = 100, group_index = 4 }, -- text within current buffer
         { name = 'fuzzy_buffer', priority = 100, group_index = 4 }, -- text within current buffer
-        { name = 'spell', priority = 100, group_index = 4 },
-        { name = 'dictionary', priority = 100, group_index = 4 },
         -- { name = 'dap', priority = 40, group_index = 6 },
         { name = 'calc' },
         -- { name = 'lazydev' },

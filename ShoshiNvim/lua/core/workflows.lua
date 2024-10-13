@@ -23,7 +23,7 @@
 --
 -- navigate to vault
 -- vim.keymap.set('n', '<leader>oo', ':cd /Users/alex/library/Mobile\\ Documents/iCloud~md~obsidian/Documents/ZazenCodes<cr>')
-vim.keymap.set('n', '<leader>op', ':cd ~/obsedian/NGNl/')
+vim.keymap.set('n', '<leader>op', ':cd ~/satori/note')
 --
 -- convert note to template and remove leading white space
 vim.keymap.set('n', '<leader>on', ':ObsidianTemplate note<cr> :lua vim.cmd([[1,/^\\S/s/^\\n\\{1,}//]])<cr>')

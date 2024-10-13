@@ -26,11 +26,15 @@ return {
     workspaces = {
       {
         name = 'work_space',
-        path = '~/satori/note/ntn/',
+        path = '~/satori/note/ntn',
       },
       {
-        name = 'note_space',
+        name = 'stamford',
         path = '~/satori/note/stamford',
+      },
+      {
+        name = 'todo',
+        path = '~/satori/note/todo',
       },
       -- {
       --   name = 'todo_space',
