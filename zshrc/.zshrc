@@ -42,8 +42,13 @@ zinit wait lucid light-mode from"gh-r" as"command" for \
 
 
 
-# eval "$(luarocks path --bin)"   # you can also add LUA_PATH based on your own setup
-# set -gx DYLD_LIBRARY_PATH /opt/homebrew/lib  # you should see libMagickxxxx lib files in this folder
+# Add LuaRocks binaries to PATH
+eval "$(luarocks path --bin)"
+
+# Set the library path for Homebrew libraries
+export DYLD_LIBRARY_PATH="/opt/homebrew/lib:$DYLD_LIBRARY_PATH"
+
+
 
 # Add in zsh plugins
 # zinit light zsh-users/zsh-syntax-highlighting
