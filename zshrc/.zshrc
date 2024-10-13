@@ -42,6 +42,8 @@ zinit wait lucid light-mode from"gh-r" as"command" for \
 
 
 
+# eval "$(luarocks path --bin)"   # you can also add LUA_PATH based on your own setup
+# set -gx DYLD_LIBRARY_PATH /opt/homebrew/lib  # you should see libMagickxxxx lib files in this folder
 
 # Add in zsh plugins
 # zinit light zsh-users/zsh-syntax-highlighting
@@ -85,6 +87,7 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+
 
 
 # Aliases

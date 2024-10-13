@@ -40,6 +40,7 @@
       "imagemagick"
       "asdf"
       "luarocks"
+      "pkg-config"
     ];
 
     masApps = {
