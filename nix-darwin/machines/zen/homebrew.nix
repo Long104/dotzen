@@ -41,6 +41,8 @@
       "asdf"
       "luarocks"
       "pkg-config"
+      "luajit"
+      "brew install lua"
     ];
 
     masApps = {
