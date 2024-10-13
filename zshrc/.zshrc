@@ -98,9 +98,11 @@ alias lt="eza --color=always --icons=always -T "
 alias nf="clear && neofetch"
 alias apprun="osascript -e 'tell application \"System Events\" to return name of processes whose background only is false'"
 alias psrun='ps ux -p $(osascript -e "tell application \"System Events\" to return unix id of processes whose background only is false")'
-alias convert='~/dotfiles/script/.config/script/350-image-to-all.sh'
+# alias convert='~/dotfiles/script/.config/script/350-image-to-all.sh'
 alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
 alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
+alias docker_clean_cache='docker buildx prune -f'
+alias docker_clear_cache='docker builder prune'
 alias git-bare="git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 alias n="nvim"
 alias f="nvim -c ':Telescope find_files'"
