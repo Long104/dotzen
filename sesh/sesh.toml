@@ -23,18 +23,51 @@ import = ["~/c/deyis-project/.sesh.toml"]
 # name = "perplexica"
 # path = "~/c/perplexica"
 # startup_command = "docker compose up -d"
-#
-# [[session]]
-# name = "Home 🏡"
-# path = "usr"
+
+[[session]]
+name = "Home 🏡"
+path = "usr"
 # startup_command = "z"
 # startup_command = "l"
-#
+
 # [[session]]
 # name = "code 💻"
 # path = "~/PlayCodeChess/"
 # startup_command = "ls"
-#
+
+
+[[session]]
+name = "zen 🏯"
+path = "~/satori"
+
+[[session]]
+name = "dotzen 🌄"
+path = "~/dotzen"
+
+[[session]]
+name = "nix-darwin 🌇"
+path = "~/dotzen/nix-darwin"
+
+[[session]]
+name = "Note 🗒️"
+path = "~/satori/note/ntn"
+
+[[session]]
+name = "Stamford 🌌"
+path = "~/satori/note/stamford"
+
+[[session]]
+name = "Local 🌋"
+path = "~/.local"
+
+
+
+[[session]]
+name = "second brain 🧠"
+path = "~/satori/note"
+# startup_command = "nvim +ObsidianToday"
+# startup_command = "nvim"
+
 
 # tmuxp = "~/c/dotfiles/.config/tmux/tmuxp-tmux.yml"
 # tmuxp = "/Users/joshmedeski/c/dotfiles/.config/tmux/tmuxp-tmux.yml"
@@ -54,14 +87,17 @@ import = ["~/c/deyis-project/.sesh.toml"]
 # path = "/tmp"
 # startup_command = "update"
 #
-# [[session]]
-# name = "neovim config"
-# path = "~/c/dotfiles/.config/nvim"
+[[session]]
+name = "neovim config 🌃"
+path = "~/dotzen/nvim"
+# startup_command = "nvim"
 
-# [[session]]
-# name = "neovim config"
-# path = "~/.config"
-# startup_command = "nvim nvim"
+
+
+[[session]]
+name = "shoshinvim config 🌊"
+path = "~/dotzen/ShoshiNvim"
+# startup_command = "nvim"
 
 #
 # [[session]]
@@ -91,7 +127,8 @@ import = ["~/c/deyis-project/.sesh.toml"]
 # path = "~/obsedian/NGNl/"
 # startup_command = "nvim +ObsidianToday"
 # startup_command = "nvim"
-#
+# #
+
 # [[session]]
 # name = "sesh config"
 # path = "~/.config/sesh"

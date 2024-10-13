@@ -33,6 +33,7 @@
       "postman"
       "spotify"
       "aldente"
+      "obsidian"
     ];
 
     brews = [

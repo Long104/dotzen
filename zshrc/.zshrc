@@ -129,10 +129,10 @@ bindkey -s ^a "nvims\n"
 
 if [ -z "$TMUX" ]; then
     # Check if the tmux session 'code' exists
-    if tmux has-session -t code 2>/dev/null; then
-        tmux attach -t code
+    if tmux has-session -t code💻 2>/dev/null; then
+        tmux attach -t code💻
     else
-        tmux new-session -s code
+        tmux new-session -s code💻
     fi
 fi
 

@@ -26,16 +26,16 @@ return {
     workspaces = {
       {
         name = 'work_space',
-        path = '~/obsedian/NGNl/workspace',
+        path = '~/satori/note/ntn/',
       },
       {
         name = 'note_space',
-        path = '~/obsedian/NGNl/knowledge',
+        path = '~/satori/note/stamford',
       },
-      {
-        name = 'todo_space',
-        path = '~/obsedian/NGNl/todo',
-      },
+      -- {
+      --   name = 'todo_space',
+      --   path = '~/obsedian/NGNl/todo',
+      -- },
 
       -- notes_subdir = 'inbox',
       -- new_notes_location = 'notes_subdir',
