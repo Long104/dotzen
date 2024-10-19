@@ -1,21 +1,19 @@
-{ config
-, lib
-, pkgs
-, ...
-}:
-
-let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   apps = pkgs.buildEnv {
     name = "home-manager-applications";
     paths = config.home.packages;
     pathsToLink = "/Applications";
   };
-in
-{
+in {
   # Home-manager does not link installed applications to the user environment. This means apps will not show up
   # in spotlight, and when launched through the dock they come with a terminal window. This is a workaround.
   # Upstream issue: https://github.com/nix-community/home-manager/issues/1341
-  home.activation.addApplications = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+  home.activation.addApplications = lib.hm.dag.entryAfter ["writeBoundary"] ''
     echo "setting up ~/Applications/Home Manager Apps..." >&2
     nix_apps="$HOME/Applications/Home Manager Apps"
 
@@ -29,7 +27,7 @@ in
             # It does understand MacOS aliases though, a unique filesystem feature. Sadly they cannot be created
             # from bash (as far as I know), so we use the oh-so-great Apple Script instead.
             /usr/bin/osascript -e "
-                set fileToAlias to POSIX file \"$src\" 
+                set fileToAlias to POSIX file \"$src\"
                 set applicationsFolder to POSIX file \"$nix_apps\"
 
                 tell application \"Finder\"

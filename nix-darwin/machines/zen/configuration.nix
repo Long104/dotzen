@@ -116,8 +116,8 @@
         "com.apple.mouse.tapBehavior" = 1;
       };
 
-      screencapture.location = "~/Pictures/screenshots";
-      screensaver.askForPasswordDelay = 10;
+      # screencapture.location = "~/Pictures/screenshots";
+      # screensaver.askForPasswordDelay = 10;
 
       dock = {
         autohide = true;

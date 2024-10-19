@@ -6,55 +6,7 @@
   #test
   lib,
   ...
-}: let
-  apps = pkgs.buildEnv {
-    name = "home-manager-applications";
-    paths = config.home.packages;
-    pathsToLink = "/Applications";
-  };
-in {
-
-# home.activation = {
-#   aliasApplications = lib.hm.dag.entryAfter ["writeBoundary"] ''
-#     app_folder="$(echo ~/Applications)/Home Manager Apps"
-#     home_manager_app_folder="$genProfilePath/home-path/Applications"
-#     $DRY_RUN_CMD rm -rf "$app_folder"
-#     $DRY_RUN_CMD mkdir "$app_folder"
-#     for app in $(find "$newGenPath/home-path/Applications" -type l -exec readlink -f {} \;)
-#     do
-#       $DRY_RUN_CMD /usr/bin/osascript \
-#         -e "tell app \"Finder\"" \
-#         -e "make new alias file at POSIX file \"$app_folder\" to POSIX file \"$app\"" \
-#         -e "set name of result to \"$(basename $app)\"" \
-#         -e "end tell"
-#     done
-#   '';
-# };
-
-  # home.activation = {
-  #   copyApplications = let
-  #     apps = pkgs.buildEnv {
-  #       name = "home-manager-applications";
-  #       paths = config.home.packages;
-  #       pathsToLink = "/Applications";
-  #     };
-  #   in lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-  #     baseDir="$HOME/Applications/Home Manager Apps"
-  #     if [ -d "$baseDir" ]; then
-  #       rm -rf "$baseDir"
-  #     fi
-  #     mkdir -p "$baseDir"
-  #     for appFile in ${apps}/Applications/*; do
-  #       target="$baseDir/$(basename "$appFile")"
-  #       $DRY_RUN_CMD cp ''${VERBOSE_ARG:+-v} -fHRL "$appFile" "$baseDir"
-  #       $DRY_RUN_CMD chmod ''${VERBOSE_ARG:+-v} -R +w "$target"
-  #     done
-  #   '';
-  # };
-
-
-
-
+}: {
   home.username = "pantornchuavallee";
   home.homeDirectory = "/Users/pantornchuavallee";
   # home.stateVersion = "23.05"; # Please read the comment before changing.
@@ -73,6 +25,8 @@ in {
     pkgs.atac
     pkgs.vesktop
     pkgs.imagemagick
+    pkgs.bun
+    pkgs.deno
     # pkgs.lua51Packages.luamagick
   ];
 

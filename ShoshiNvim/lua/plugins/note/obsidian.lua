@@ -33,8 +33,12 @@ return {
         path = '~/satori/note/stamford',
       },
       {
-        name = 'todo',
-        path = '~/satori/note/todo',
+        name = 'code',
+        path = '~/satori/note/code',
+      },
+      {
+        name = 'second brain',
+        path = '~/satori/note',
       },
       -- {
       --   name = 'todo_space',
