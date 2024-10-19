@@ -25,8 +25,8 @@ return {
       --   temperature = 0,
       --   max_tokens = 4096,
       -- },
-      gimini = {
-        api_key_name = 'AIzaSyDFRfF4xtR3sZU_lOIElMRz0j9kAZ2xzpE',
+      gemini = {
+        api_key_name = os.getenv 'GEMINI_API_KEY',
         endpoint = 'aiplatform.googleapis.com',
         temperature = 0,
         max_tokens = 4096,

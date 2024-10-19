@@ -27,6 +27,7 @@
     pkgs.imagemagick
     pkgs.bun
     pkgs.deno
+    pkgs.ollama
     # pkgs.lua51Packages.luamagick
   ];
 

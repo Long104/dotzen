@@ -28,7 +28,7 @@ return {
     -- customize
     --
     -- { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' } },
-    'dmitmel/cmp-cmdline-history',
+    -- 'dmitmel/cmp-cmdline-history',
     -- 'David-Kunz/cmp-npm',
     -- { "hrsh7th/cmp-nvim-lua", lazy = true },
     -- 'Snikimonkd/cmp-go-pkgs', -- for go
@@ -302,7 +302,7 @@ return {
           { name = 'nvim_lsp_document_symbol' },
           { name = 'buffer' },
           { name = 'fuzzy_buffer' },
-          { name = 'cmdline_history' },
+          -- { name = 'cmdline_history' },
         },
       }),
       cmp.setup.cmdline(':', {

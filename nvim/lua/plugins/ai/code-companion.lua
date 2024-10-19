@@ -4,7 +4,7 @@ return {
     {
       mode = { 'n', 'x' },
       '<leader>ac',
-      '<cmd>CodeCompanionToggle<cr>',
+      '<cmd>CodeCompanionChat<cr>',
       desc = 'toggle ai chat',
     },
     {
