@@ -49,12 +49,16 @@ name = "nix-darwin 🌇"
 path = "~/dotzen/nix-darwin"
 
 [[session]]
-name = "Note 🗒️"
-path = "~/satori/note/ntn"
+name = "codingNote 📚"
+path = "~/satori/note/code"
 
 [[session]]
 name = "Stamford 🌌"
 path = "~/satori/note/stamford"
+
+[[session]]
+name = "Note ⛩️"
+path = "~/satori/note/ntn"
 
 [[session]]
 name = "Local 🌋"
