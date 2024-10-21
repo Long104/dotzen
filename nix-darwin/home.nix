@@ -28,7 +28,7 @@
     pkgs.bun
     pkgs.deno
     pkgs.ollama
-    pkgs.llm-ls
+    # pkgs.llm-ls
     pkgs.pipx
     # pkgs.lua51Packages.luamagick
   ];
