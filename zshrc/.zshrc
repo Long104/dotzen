@@ -14,6 +14,7 @@ if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
 fi
 
 export PATH="/usr/local/bin:/usr/bin:$PATH"
+export $(grep -v '^#' ../.env | xargs)
 
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -30,6 +31,7 @@ autoload -Uz _zinit
 zinit wait lucid light-mode for \
     as"command" from"gh-r" atload'eval "$(starship init zsh)"' \
     starship/starship \
+
 
 
 

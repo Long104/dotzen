@@ -269,7 +269,7 @@ You are an expert teacher skilled in developing measurable, short-term objective
               content = function(context)
                 return 'I want you to act as a kind teacher that explain to me '
                   .. context.filetype
-                  .. " You are an expert student with superb comprehension and communication skills, skilled in reading, understanding, and summarizing the main points of large sections of dense texts. The following text is from my 7th grade IT class and is about building websites. Your task is to summarize the text, providing bullet points for the main ideas, steps, and vocabulary."
+                  .. ' You are an expert student with superb comprehension and communication skills, skilled in reading, understanding, and summarizing the main points of large sections of dense texts. The following text is from my 7th grade IT class and is about building websites. Your task is to summarize the text, providing bullet points for the main ideas, steps, and vocabulary.'
               end,
               opts = {
                 visible = false,
@@ -292,7 +292,8 @@ You are an expert teacher skilled in developing measurable, short-term objective
               role = 'Masachika Kuze',
               condition = function(context)
                 return context.is_visual
-              end, content = function(context)
+              end,
+              content = function(context)
                 local selection = require('codecompanion.helpers.actions').get_code(context.start_line, context.end_line)
 
                 return string.format(
