@@ -14,7 +14,7 @@ if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
 fi
 
 export PATH="/usr/local/bin:/usr/bin:$PATH"
-export $(grep -v '^#' ../.env | xargs)
+export $(grep -v '^#' ~/dotzen/.env | xargs)
 
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
