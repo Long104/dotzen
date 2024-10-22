@@ -2,7 +2,7 @@ return {
   'stevearc/dressing.nvim',
   keys = {
     {
-      mode = 'i',
+      mode = 'n',
       '<leader>cl',
       function()
         vim.ui.input({ prompt = '😄Calculator: ' }, function(input)

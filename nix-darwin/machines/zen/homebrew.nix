@@ -43,6 +43,7 @@
       "pkg-config"
       "luajit"
       "lua"
+      # "jmeter"
     ];
 
     masApps = {
