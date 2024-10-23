@@ -44,6 +44,7 @@ require('lazy').setup {
     { import = 'plugins.utility.database' },
     -- { import = 'plugins.utility.refactor' },
     -- { import = 'plugins.utility.docker' },
+    { import = 'plugins.utility.kubernetes' },
 
     -- test
     -- { import = 'plugins.utility.test' },

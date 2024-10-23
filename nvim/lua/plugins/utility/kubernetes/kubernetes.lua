@@ -3,7 +3,7 @@ return {
     "ramilito/kubectl.nvim",
     keys = {{
       "n",
-      "<leader>k",
+      "<leader>ku",
       '<cmd>lua require("kubectl").toggle()<cr>',
       desc = "Toggle kubectl terminal",
       { noremap = true, silent = true },
