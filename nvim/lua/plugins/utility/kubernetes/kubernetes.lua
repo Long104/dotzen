@@ -2,8 +2,8 @@ return {
   {
     "ramilito/kubectl.nvim",
     keys = {{
-      "n",
-      "<leader>ku",
+      mode = "n",
+      "<leader>k",
       '<cmd>lua require("kubectl").toggle()<cr>',
       desc = "Toggle kubectl terminal",
       { noremap = true, silent = true },
@@ -13,4 +13,3 @@ return {
     end,
   },
 }
--- vim.keymap.set("n", "<leader>k", '<cmd>lua require("kubectl").toggle()<cr>', { noremap = true, silent = true })
