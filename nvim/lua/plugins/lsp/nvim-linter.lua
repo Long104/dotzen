@@ -1,29 +1,31 @@
 return {
-  'mfussenegger/nvim-lint',
-  event = { 'BufReadPost', 'BufWritePost', 'BufNewFile', 'BufReadPre' },
+  "mfussenegger/nvim-lint",
+  event = { "BufReadPost", "BufWritePost", "BufNewFile", "BufReadPre" },
   config = function()
-    local lint = require 'lint'
-    vim.keymap.set('n', '<leader>lintinfo', '<cmd>lua print(vim.inspect(require("lint").linters_by_ft))<CR>', { noremap = true, silent = true })
+    local lint = require "lint"
+    vim.keymap.set("n", "<leader>lintinfo", '<cmd>lua print(vim.inspect(require("lint").linters_by_ft))<CR>', { noremap = true, silent = true })
 
     local function print_available_linters()
-      print 'Available linters:'
+      print "Available linters:"
       for linter, _ in pairs(lint.linters) do
         print(linter)
       end
     end
-    vim.keymap.set('n', '<leader>ls', function()
+    vim.keymap.set("n", "<leader>ls", function()
       print_available_linters()
-    end, { noremap = true, silent = true, desc = 'Print available linters' })
+    end, { noremap = true, silent = true, desc = "Print available linters" })
+
+    vim.env.PATH = vim.env.PATH .. ":/etc/profiles/per-user/pantornchuavallee/bin"
 
     lint.linters_by_ft = {
       -- php = { 'phpcs' },
-      javascript = { 'eslint_d' },
-      typescript = { 'eslint_d' },
-      javascriptreact = { 'eslint_d' },
-      typescriptreact = { 'eslint_d' },
-      python = { 'pylint' },
-      go = { 'golangcilint' },
-      dockerfile = { 'hadolint' },
+      javascript = { "eslint_d" },
+      typescript = { "eslint_d" },
+      javascriptreact = { "eslint_d" },
+      typescriptreact = { "eslint_d" },
+      python = { "pylint" },
+      go = { "golangcilint" },
+      Dockerfile = { "hadolint" },
     }
 
     lint.linters = {
@@ -31,11 +33,11 @@ return {
       ---@diagnostic disable-next-line: missing-fields
       eslint_d = {
         args = {
-          '--no-warn-ignored', -- <-- this is the key argument
-          '--format',
-          'json',
-          '--stdin',
-          '--stdin-filename',
+          "--no-warn-ignored", -- <-- this is the key argument
+          "--format",
+          "json",
+          "--stdin",
+          "--stdin-filename",
           function()
             return vim.api.nvim_buf_get_name(0)
           end,
@@ -45,9 +47,18 @@ return {
       -- golang
       ---@diagnostic disable-next-line: missing-fields
       golangcilint = {
-        cmd = '/Users/pantorn/.local/share/ZenVim/mason/bin/golangci-lint', -- use the full path
+        cmd = "/Users/pantorn/.local/share/ZenVim/mason/bin/golangci-lint", -- use the full path
         stdin = true,
         args = {}, -- add any necessary arguments if needed
+      },
+
+      -- docker
+      ---@diagnostic disable-next-line: missing-fields
+      hadolint = {
+        command = "hadolint",
+        args = { "--from", "dockerfile" },
+        cmd = "/etc/profiles/per-user/pantornchuavallee/bin/hadolint",
+        stdin = true,
       },
     }
 
@@ -58,18 +69,18 @@ return {
     ---  args = {}, -- add any necessary arguments if needed
     ---}
 
-    local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
+    local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
     -- vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave', 'BufReadPost' }, {
-    vim.api.nvim_create_autocmd({ 'BufWritePost', 'InsertLeave', 'BufReadPost' }, {
+    vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave", "BufReadPost" }, {
       group = lint_augroup,
       callback = function()
         lint.try_lint()
       end,
     })
 
-    vim.keymap.set('n', '<leader>li', function()
+    vim.keymap.set("n", "<leader>li", function()
       lint.try_lint()
-    end, { desc = 'Trigger linting for current file' })
+    end, { desc = "Trigger linting for current file" })
   end,
 }
 
