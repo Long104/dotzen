@@ -264,3 +264,5 @@ end
 
 -- Set the fold text to use the custom function
 vim.opt.foldtext = custom_foldtext()
+
+

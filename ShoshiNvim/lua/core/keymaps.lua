@@ -51,3 +51,7 @@ vim.keymap.set('n', '<leader>fX', '<cmd>!chmod -x "%"<CR>', { silent = true, des
 
 -- nvim-tree
 -- vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<cr>', { desc = 'toggle file explorer' }) -- toggle file explorer
+
+-- open file in preview
+vim.keymap.set('n', '<leader>pr', '<cmd>!open -a \'preview\' %:p<cr>')
+

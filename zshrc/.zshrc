@@ -111,7 +111,7 @@ alias psrun='ps ux -p $(osascript -e "tell application \"System Events\" to retu
 # alias convert='~/dotfiles/script/.config/script/350-image-to-all.sh'
 alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
 alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
-alias docker_clean_cache='docker buildx prune -f'
+alias docker_clean_cache_x='docker buildx prune -f'
 alias docker_clear_cache='docker builder prune'
 alias git-bare="git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 alias n="nvim"
