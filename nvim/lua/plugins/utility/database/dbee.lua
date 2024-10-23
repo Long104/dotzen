@@ -3,6 +3,11 @@ return {
   dependencies = {
     "MunifTanjim/nui.nvim",
   },
+  keys = {{
+    "n",
+    "<leader>db",
+    ":lua require('dbee').toggle()<CR>",
+  }},
   build = function()
     -- Install tries to automatically detect the install method.
     -- if it fails, try calling it with one of these parameters:
