@@ -4,7 +4,7 @@ return {
     "MunifTanjim/nui.nvim",
   },
   keys = {{
-    "n",
+   mode = "n",
     "<leader>db",
     ":lua require('dbee').toggle()<CR>",
   }},
