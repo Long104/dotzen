@@ -72,7 +72,6 @@ return {
         "black",
         "pylint",
         "eslint_d",
-        "hadolint",
         -- 'nixpkgs-fmt',
         -- 'google-java-format',
         -- 'checkstyle',

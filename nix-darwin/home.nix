@@ -31,6 +31,8 @@
     # pkgs.llm-ls
     pkgs.pipx
     # pkgs.lua51Packages.luamagick
+    # linter
+    pkgs.hadolint
   ];
 
   home.file = {
