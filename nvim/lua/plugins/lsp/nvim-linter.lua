@@ -33,6 +33,24 @@ return {
     lint.linters = {
       -- typescript
       ---@diagnostic disable-next-line: missing-fields
+      oxlint = {
+        cmd = "/Users/pantorn/.local/share/nvim/mason/bin/oxlint", -- use the full path
+        stdin = true,
+        args = {}, -- add any necessary arguments if needed
+        -- args = {
+        --   "--no-warn-ignored", -- <-- this is the key argument
+        --   "--format",
+        --   "json",
+        --   "--stdin",
+        --   "--stdin-filename",
+        --   "%f",
+        --   function()
+        --     return vim.api.nvim_buf_get_name(0)
+        --   end,
+        -- },
+      },
+
+      ---@diagnostic disable-next-line: missing-fields
       -- eslint_d = {
       --   args = {
       --     "--no-warn-ignored", -- <-- this is the key argument
