@@ -153,14 +153,6 @@ return {
         }
       end,
 
-      ["emmet_ls"] = function()
-        -- configure emmet language server
-        lspconfig["emmet_ls"].setup {
-          capabilities = capabilities,
-          filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-        }
-      end,
-
       ["nil_ls"] = function()
         -- configure emmet language server
         lspconfig["nil_ls"].setup {
@@ -213,33 +205,47 @@ return {
       --   }
       -- end,
 
-      -- ["ts_ls"] = function()
-      --   require("lspconfig").ts_ls.setup {
-      --     cmd = { "typescript-language-server", "--stdio" },
-      --     settings = {
-      --       completions = {
-      --         completeFunctionCalls = true,
-      --       },
-      --       typescript = {
-      --         inlayHints = {
-      --           includeInlayParameterNameHints = "all",
-      --           includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-      --           includeInlayFunctionParameterTypeHints = true,
-      --           includeInlayVariableTypeHints = true,
-      --           includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-      --           includeInlayPropertyDeclarationTypeHints = true,
-      --           includeInlayFunctionLikeReturnTypeHints = true,
-      --           includeInlayEnumMemberValueHints = true,
-      --         },
-      --       },
-      --     },
-      --
-      --     filetypes = { "typescriptreact", "javascriptreact", "typescript", "javascript" },
-      --   }
-      -- end,
+      ["ts_ls"] = function()
+        require("lspconfig").ts_ls.setup {
+          capabilities = capabilities,
+          cmd = { "typescript-language-server", "--stdio" },
+          settings = {
+            completions = {
+              completeFunctionCalls = true,
+            },
+            typescript = {
+              inlayHints = {
+                includeInlayParameterNameHints = "all",
+                includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+                includeInlayFunctionParameterTypeHints = true,
+                includeInlayVariableTypeHints = true,
+                includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+                includeInlayPropertyDeclarationTypeHints = true,
+                includeInlayFunctionLikeReturnTypeHints = true,
+                includeInlayEnumMemberValueHints = true,
+              },
+            },
+          },
+
+          root_dir = function(filename, bufnr)
+            local denoRootDir = lspconfig.util.root_pattern("deno.json", "deno.json")(filename)
+            if denoRootDir then
+              -- print('this seems to be a deno project; returning nil so that tsserver does not attach');
+              return nil
+              -- else
+              -- print('this seems to be a ts project; return root dir based on package.json')
+            end
+
+            return lspconfig.util.root_pattern "package.json"(filename)
+          end,
+          filetypes = { "typescriptreact", "javascriptreact", "typescript", "javascript" },
+          single_file_support = false,
+        }
+      end,
 
       ["denols"] = function()
         require("lspconfig").denols.setup {
+          capabilities = capabilities,
           root_dir = require("lspconfig.util").root_pattern "deno.json",
           init_options = {
             lint = true,
@@ -274,6 +280,7 @@ return {
 
       ["gopls"] = function()
         require("lspconfig").gopls.setup {
+          capabilities = capabilities,
           settings = {
             gopls = {
               hints = {

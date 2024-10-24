@@ -47,7 +47,6 @@ return {
         "gopls",
         "phpactor",
         "graphql",
-        "emmet_ls",
         "prismals",
         "pyright",
         "lua_ls",
