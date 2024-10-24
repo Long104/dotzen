@@ -205,25 +205,6 @@ return {
       --   }
       -- end,
 
-      ["typescript-tools"] = function()
-        require("lspconfig").ts_ls.setup {
-          capabilities = capabilities,
-
-          root_dir = function(filename, bufnr)
-            local denoRootDir = lspconfig.util.root_pattern("deno.json", "deno.json")(filename)
-            if denoRootDir then
-              -- print('this seems to be a deno project; returning nil so that tsserver does not attach');
-              return nil
-              -- else
-              -- print('this seems to be a ts project; return root dir based on package.json')
-            end
-
-            return lspconfig.util.root_pattern "package.json"(filename)
-          end,
-          -- filetypes = { "typescriptreact", "javascriptreact", "typescript", "javascript" },
-          single_file_support = false,
-        }
-      end,
 
       ["ts_ls"] = function()
         require("lspconfig").ts_ls.setup {
