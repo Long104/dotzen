@@ -34,7 +34,7 @@ return {
       -- typescript
       ---@diagnostic disable-next-line: missing-fields
       oxlint = {
-        cmd = "/Users/pantorn/.local/share/nvim/mason/bin/oxlint", -- use the full path
+        cmd = "/Users/pantornchuavallee/.local/share/nvim/mason/bin/oxlint", -- use the full path
         stdin = true,
         args = {}, -- add any necessary arguments if needed
         -- args = {
@@ -63,14 +63,14 @@ return {
       --       return vim.api.nvim_buf_get_name(0)
       --     end,
       --   },
-      --   cmd = "/Users/pantorn/.local/share/nvim/mason/bin/eslint_d",
+      --   cmd = "/Users/pantornchuavallee/.local/share/nvim/mason/bin/eslint_d",
       --   command = "eslint_d",
       -- },
 
       -- golang
       ---@diagnostic disable-next-line: missing-fields
       golangcilint = {
-        cmd = "/Users/pantorn/.local/share/nvim/mason/bin/golangci-lint", -- use the full path
+        cmd = "/Users/pantornchuavallee/.local/share/nvim/mason/bin/golangci-lint", -- use the full path
         stdin = true,
         args = {}, -- add any necessary arguments if needed
       },
