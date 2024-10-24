@@ -19,8 +19,10 @@ return {
 
     lint.linters_by_ft = {
       -- php = { 'phpcs' },
-      javascript = { "eslint_d" },
-      typescript = { "eslint_d" },
+      -- javascript = { "eslint_d" },
+      -- typescript = { "eslint_d" },
+      javascript = { "oxlint" },
+      typescript = { "oxlint" },
       javascriptreact = { "eslint_d" },
       typescriptreact = { "eslint_d" },
       python = { "pylint" },
@@ -31,21 +33,21 @@ return {
     lint.linters = {
       -- typescript
       ---@diagnostic disable-next-line: missing-fields
-      eslint_d = {
-        args = {
-          "--no-warn-ignored", -- <-- this is the key argument
-          "--format",
-          "json",
-          "--stdin",
-          "--stdin-filename",
-          "%f",
-          function()
-            return vim.api.nvim_buf_get_name(0)
-          end,
-        },
-        cmd = "/Users/pantorn/.local/share/nvim/mason/bin/eslint_d",
-        command = "eslint_d",
-      },
+      -- eslint_d = {
+      --   args = {
+      --     "--no-warn-ignored", -- <-- this is the key argument
+      --     "--format",
+      --     "json",
+      --     "--stdin",
+      --     "--stdin-filename",
+      --     "%f",
+      --     function()
+      --       return vim.api.nvim_buf_get_name(0)
+      --     end,
+      --   },
+      --   cmd = "/Users/pantorn/.local/share/nvim/mason/bin/eslint_d",
+      --   command = "eslint_d",
+      -- },
 
       -- golang
       ---@diagnostic disable-next-line: missing-fields

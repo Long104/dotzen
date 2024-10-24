@@ -6,13 +6,17 @@ return {
 
     conform.setup {
       formatters_by_ft = {
-        php = { 'php_cs_fixer'},
+        php = { "php_cs_fixer" },
         -- php = { "prettier" },
         blade = { "blade-formatter", "prettier" },
-        javascript = { "prettier" },
-        typescript = { "prettier" },
-        javascriptreact = { "prettier" },
-        typescriptreact = { "prettier" },
+        -- javascript = { "prettier" },
+        -- typescript = { "prettier" },
+        -- javascriptreact = { "prettier" },
+        -- typescriptreact = { "prettier" },
+        javascript = { "biome" },
+        typescript = { "biome" },
+        javascriptreact = { "biome" },
+        typescriptreact = { "biome" },
         css = { "prettier" },
         go = { "goimports", "gofumpt", "gomodifytags" },
         html = { "prettier" },

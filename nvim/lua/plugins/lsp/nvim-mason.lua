@@ -53,17 +53,19 @@ return {
         "lua_ls",
         "docker_compose_language_service",
         "dockerls",
-        'ts_ls',
+        "ts_ls",
+        "deno",
         "nil_ls",
-        -- "deno"
         -- 'ocamllsp'
         "bashls",
+        "biome",
       },
     }
 
     mason_tool_installer.setup {
       ensure_installed = {
         "shfmt",
+        "oxlint",
         -- 'pint',
         "phpcs",
         "php-cs-fixer",

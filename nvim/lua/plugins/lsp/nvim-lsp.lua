@@ -238,6 +238,32 @@ return {
         }
       end,
 
+      -- require("lspconfig").denols.setup {
+      --   root_dir = require("lspconfig.util").root_pattern "deno.json",
+      --   init_options = {
+      --     lint = true,
+      --     unstable = true,
+      --     suggest = {
+      --       imports = {
+      --         hosts = {
+      --           ["https://deno.land"] = true,
+      --           ["https://cdn.nest.land"] = true,
+      --           ["https://crux.land"] = true,
+      --         },
+      --       },
+      --     },
+      --   },
+      --   on_attach = function()
+      --     local active_clients = vim.lsp.get_active_clients()
+      --     for _, client in pairs(active_clients) do
+      --       -- stop tsserver if denols is already active
+      --       if client.name == "tsserver" then
+      --         client.stop()
+      --       end
+      --     end
+      --   end,
+      -- },
+
       ["gopls"] = function()
         require("lspconfig").gopls.setup {
           settings = {
