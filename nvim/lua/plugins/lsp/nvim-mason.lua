@@ -53,8 +53,9 @@ return {
         "lua_ls",
         "docker_compose_language_service",
         "dockerls",
-        -- 'ts_ls',
+        'ts_ls',
         "nil_ls",
+        -- "deno"
         -- 'ocamllsp'
         "bashls",
       },
