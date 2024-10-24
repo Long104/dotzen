@@ -213,56 +213,64 @@ return {
       --   }
       -- end,
 
-      ["ts_ls"] = function()
-        require("lspconfig").ts_ls.setup {
-          cmd = { "typescript-language-server", "--stdio" },
-          settings = {
-            completions = {
-              completeFunctionCalls = true,
-            },
-            typescript = {
-              inlayHints = {
-                includeInlayParameterNameHints = "all",
-                includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-                includeInlayFunctionParameterTypeHints = true,
-                includeInlayVariableTypeHints = true,
-                includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-                includeInlayPropertyDeclarationTypeHints = true,
-                includeInlayFunctionLikeReturnTypeHints = true,
-                includeInlayEnumMemberValueHints = true,
-              },
-            },
-          },
-
-          filetypes = { "typescriptreact", "javascriptreact", "typescript", "javascript" },
-        }
-      end,
-
-      -- require("lspconfig").denols.setup {
-      --   root_dir = require("lspconfig.util").root_pattern "deno.json",
-      --   init_options = {
-      --     lint = true,
-      --     unstable = true,
-      --     suggest = {
-      --       imports = {
-      --         hosts = {
-      --           ["https://deno.land"] = true,
-      --           ["https://cdn.nest.land"] = true,
-      --           ["https://crux.land"] = true,
+      -- ["ts_ls"] = function()
+      --   require("lspconfig").ts_ls.setup {
+      --     cmd = { "typescript-language-server", "--stdio" },
+      --     settings = {
+      --       completions = {
+      --         completeFunctionCalls = true,
+      --       },
+      --       typescript = {
+      --         inlayHints = {
+      --           includeInlayParameterNameHints = "all",
+      --           includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+      --           includeInlayFunctionParameterTypeHints = true,
+      --           includeInlayVariableTypeHints = true,
+      --           includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+      --           includeInlayPropertyDeclarationTypeHints = true,
+      --           includeInlayFunctionLikeReturnTypeHints = true,
+      --           includeInlayEnumMemberValueHints = true,
       --         },
       --       },
       --     },
-      --   },
-      --   on_attach = function()
-      --     local active_clients = vim.lsp.get_active_clients()
-      --     for _, client in pairs(active_clients) do
-      --       -- stop tsserver if denols is already active
-      --       if client.name == "tsserver" then
-      --         client.stop()
-      --       end
-      --     end
-      --   end,
-      -- },
+      --
+      --     filetypes = { "typescriptreact", "javascriptreact", "typescript", "javascript" },
+      --   }
+      -- end,
+
+      ["denols"] = function()
+        require("lspconfig").denols.setup {
+          root_dir = require("lspconfig.util").root_pattern "deno.json",
+          init_options = {
+            lint = true,
+            unstable = true,
+            suggest = {
+              imports = {
+                hosts = {
+                  ["https://deno.land"] = true,
+                  ["https://cdn.nest.land"] = true,
+                  ["https://crux.land"] = true,
+                },
+              },
+            },
+            filetypes = { "typescriptreact", "javascriptreact", "typescript", "javascript" },
+          },
+          on_attach = function()
+            local active_clients = vim.lsp.get_active_clients()
+            for _, client in pairs(active_clients) do
+              -- stop tsserver if denols is already active
+              if client.name == "tsserver" then
+                client.stop()
+              elseif client.name == "typescript-tools" then
+                client.stop()
+              end
+              -- if client.name == "tsserver" or client.name == "typescript-tools" then
+              --   client.stop()
+              -- end
+            end
+          end,
+        }
+      end,
 
       ["gopls"] = function()
         require("lspconfig").gopls.setup {
