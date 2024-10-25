@@ -42,6 +42,7 @@ return {
         -- 'jdtls'
         -- 'rust_analyzer',
         "html",
+        "emmet_language_server",
         "cssls",
         "tailwindcss",
         "gopls",

@@ -205,7 +205,6 @@ return {
       --   }
       -- end,
 
-
       ["ts_ls"] = function()
         require("lspconfig").ts_ls.setup {
           capabilities = capabilities,
@@ -239,7 +238,7 @@ return {
 
             return lspconfig.util.root_pattern "package.json"(filename)
           end,
-          -- filetypes = { "typescriptreact", "javascriptreact", "typescript", "javascript" },
+          filetypes = { "typescriptreact", "javascriptreact", "typescript", "javascript" },
           single_file_support = false,
         }
       end,
@@ -276,6 +275,27 @@ return {
               -- end
             end
           end,
+        }
+      end,
+
+      ["cssls"] = function()
+        require("lspconfig").cssls.setup {
+          capabilities = capabilities,
+          settings = {
+            css = {
+              lint = {
+                unknownAtRules = "ignore",
+              },
+            },
+          },
+          filetypes = { "typescriptreact", "javascriptreact", "typescript", "javascript" },
+        }
+      end,
+
+      ["emmet_language_server"] = function()
+        require("lspconfig").emmet_language_server.setup {
+          capabilities = capabilities,
+          filetypes = { "typescriptreact", "javascriptreact", "typescript", "javascript" },
         }
       end,
 
