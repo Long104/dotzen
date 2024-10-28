@@ -3,7 +3,7 @@ return {
   'folke/todo-comments.nvim',
   event = { 'BufReadPre', 'BufNewFile' },
   keys = {
-    { mode = 'n', '<leader>ftc', '<cmd>TodoTelescope<cr>', desc = 'find todos' },
+    {mode = 'n', '<leader>ftc', '<cmd>TodoTelescope<cr>', desc = 'find todos' },
     {mode = "n", "<leader>tt", "<cmd>TodoTelescope keywords=TODO<cr>",  desc = "[P]TODO list (Telescope)" },
     {mode = "n", "<leader>tp", "<cmd>TodoTelescope keywords=DOING<cr>",  desc = "[P]DOING list (Telescope)" },
     {mode = "n", "<leader>td", "<cmd>TodoTelescope keywords=DONE<cr>",  desc = "[P]DONE list (Telescope)" },

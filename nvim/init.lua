@@ -1,21 +1,21 @@
-require 'core'
-local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+require "core"
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
-  vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  vim.fn.system { "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath }
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup {
+require("lazy").setup {
   spec = {
     -- plugin
-    { import = 'plugins' },
+    { import = "plugins" },
 
     -- lsp
-    { import = 'plugins.lsp' },
+    { import = "plugins.lsp" },
 
     -- ai
-    { import = 'plugins.ai' },
+    { import = "plugins.ai" },
     -- { import = 'storage.morePlugin.ollama' },
     -- { import = 'storage.morePlugin.futago' },
     -- { import = 'storage.morePlugin.gen' },
@@ -23,12 +23,12 @@ require('lazy').setup {
     -- { import = 'storage.morePlugin.backseat' },
 
     -- ui
-    { import = 'plugins.ui' },
+    { import = "plugins.ui" },
 
     -- colorschemes
     -- { import = 'plugins.ui.colorschemes.kanagawa-paper' },
     -- { import = 'plugins.ui.colorschemes.kanagawa' },
-    { import = 'plugins.ui.colorschemes.kanagawa-transparent' }, -- { import = 'plugins.ui.colorschemes.catppuccin' }, { import = 'plugins.ui.colorschemes.primepuccin' },
+    { import = "plugins.ui.colorschemes.kanagawa-transparent" }, -- { import = 'plugins.ui.colorschemes.catppuccin' }, { import = 'plugins.ui.colorschemes.primepuccin' },
     -- { import = 'plugins.ui.colorschemes.oxocarbon' },
     -- { import = 'plugins.ui.colorschemes.mini-colors' },
     -- { import = 'plugins.ui.colorschemes.nord' },
@@ -41,10 +41,10 @@ require('lazy').setup {
     -- utility
     -- { import = 'plugins.utility.http' },
     -- { import = 'plugins.utility.likepostman' },
-    { import = 'plugins.utility.database' },
+    { import = "plugins.utility.database" },
     -- { import = 'plugins.utility.refactor' },
     -- { import = 'plugins.utility.docker' },
-    { import = 'plugins.utility.kubernetes' },
+    { import = "plugins.utility.kubernetes" },
 
     -- test
     -- { import = 'plugins.utility.test' },
@@ -53,25 +53,27 @@ require('lazy').setup {
     -- { import = 'plugins.utility.debug' },
     --
     -- git
-    -- { import = 'plugins.git' },
+    { import = 'plugins.git' },
 
     -- extra storage for plugins
-    { import = 'storage.morePlugin.oil' },
-    { import = 'storage.morePlugin.snipe' },
-    { import = 'storage.morePlugin.flash' },
-    { import = 'storage.morePlugin.grapple' },
-    { import = 'storage.morePlugin.zen-mode' },
-    { import = 'storage.morePlugin.yazi' },
+    { import = "storage.morePlugin.oil" },
+    { import = "storage.morePlugin.snipe" },
+    { import = "storage.morePlugin.flash" },
+    { import = "storage.morePlugin.grapple" },
+    { import = "storage.morePlugin.zen-mode" },
+    { import = "storage.morePlugin.yazi" },
+    { import = "storage.morePlugin.todo_comment" },
+    { import = "storage.morePlugin.bookmark" },
     -- { import = 'storage.morePlugin.image' },
     -- { import = 'storage.morePlugin.image-clip' },
-    { import = 'storage.morePlugin.telescope-diff' },
-    { import = 'storage.morePlugin.treesj' },
+    { import = "storage.morePlugin.telescope-diff" },
+    { import = "storage.morePlugin.treesj" },
     -- { import = 'storage.morePlugin.auto-save' },
     -- { import = 'storage.morePlugin.twilight' },
     -- { import = 'storage.morePlugin.outline' },
     -- { import = 'storage.morePlugin.glance' },
     -- { import = 'storage.morePlugin.mini-indent' },
-    { import = 'storage.morePlugin.neo-clip' },
+    { import = "storage.morePlugin.neo-clip" },
     -- { import = 'storage.morePlugin.schemastore' },
 
     -- extra storage for language
@@ -80,7 +82,7 @@ require('lazy').setup {
     -- { import = 'storage.language.go.debug' },
 
     -- typescript
-    { import = 'storage.language.typescript' },
+    { import = "storage.language.typescript" },
     -- { import = 'storage.language.typescript.debug' },
   },
   checker = {
@@ -97,22 +99,22 @@ require('lazy').setup {
   performance = {
     rtp = {
       disabled_plugins = {
-        'gzip',
-        'matchit',
+        "gzip",
+        "matchit",
         -- "matchparen",
-        'netrwPlugin',
-        'rplugin',
-        'tarPlugin',
-        'tohtml',
-        'tutor',
-        'zipPlugin',
-        'spellfile',
+        "netrwPlugin",
+        "rplugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+        "spellfile",
         -- 'shada',
-        'editorconfig',
+        "editorconfig",
       },
     },
   },
 }
 
 -- transparent background
-require 'core.transparent'
+require "core.transparent"
