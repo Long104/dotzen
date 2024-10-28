@@ -62,7 +62,7 @@ require("lazy").setup {
     { import = "storage.morePlugin.grapple" },
     { import = "storage.morePlugin.zen-mode" },
     { import = "storage.morePlugin.yazi" },
-    { import = "storage.morePlugin.todo_comment" },
+    { import = "storage.morePlugin.todo-comment" },
     { import = "storage.morePlugin.bookmark" },
     -- { import = 'storage.morePlugin.image' },
     -- { import = 'storage.morePlugin.image-clip' },
