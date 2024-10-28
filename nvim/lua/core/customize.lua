@@ -1,12 +1,6 @@
 vim.cmd 'autocmd BufEnter * set formatoptions-=cro'
 vim.cmd 'autocmd BufEnter * setlocal formatoptions-=cro'
 
-vim.api.nvim_create_user_command('GitRefresh', function()
-  vim.cmd 'e'
-  vim.cmd 'bufdo e'
-  vim.cmd 'NvimTreeRefresh'
-end, {})
-
 -- delete all session files
 local session_dir = vim.fn.stdpath 'state' .. '/sessions/'
 
