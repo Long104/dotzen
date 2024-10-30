@@ -15,6 +15,7 @@ fi
 
 export PATH="/usr/local/bin:/usr/bin:$PATH"
 export $(grep -v '^#' ~/dotzen/.env | xargs)
+export PATH="$HOME/.deno/bin:$PATH"
 
 
 
