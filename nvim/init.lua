@@ -78,8 +78,8 @@ require("lazy").setup {
 
     -- extra storage for language
     -- go
-    -- { import = 'storage.language.go' },
-    -- { import = 'storage.language.go.debug' },
+    { import = 'storage.language.go' },
+    { import = 'storage.language.go.debug' },
 
     -- typescript
     { import = "storage.language.typescript" },
