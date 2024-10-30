@@ -2,12 +2,12 @@ return {
   'olexsmir/gopher.nvim',
   ft = 'go',
   keys = {
-    {
-      mode = 'n',
-      'goi',
-      '<cmd>GoIfErr<CR>',
-      desc = 'go if err',
-    },
+    -- {
+    --   mode = 'n',
+    --   'goi',
+    --   '<cmd>GoIfErr<CR>',
+    --   desc = 'go if err',
+    -- },
     {
       mode = 'n',
       'goj',

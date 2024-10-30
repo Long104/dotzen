@@ -82,4 +82,4 @@ end, { desc = "[P]Delete newlines in selected text (join)" })
 
 -- open file
 vim.keymap.set("n", "<leader>pr", "<cmd>!open -a 'preview' %:p<cr>")
--- vim.keymap.set("n", "<leader>goi", "oif err != nil {<CR>}<Esc>Oreturn err<cr>")
+vim.keymap.set("n", "<leader>goi", "oif err != nil {<CR>}<Esc>Oreturn err<cr>")
