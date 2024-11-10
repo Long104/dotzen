@@ -43,6 +43,9 @@
       "pkg-config"
       "luajit"
       "lua"
+      "colima"
+      "docker"
+      "kubectl"
       # "jmeter"
     ];
 
