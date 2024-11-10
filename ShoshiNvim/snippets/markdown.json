@@ -5,6 +5,30 @@
     "description": "Insert a bash code block"
   },
 
+  "javascript code block": {
+    "prefix": "javascript",
+    "body": ["```javascript", "$1", "```"],
+    "description": "Insert a javascript code block"
+  },
+
+  "typescript code block": {
+    "prefix": "typescript",
+    "body": ["```typescript", "$1", "```"],
+    "description": "Insert a typescript code block"
+  },
+
+  "rust code block": {
+    "prefix": "rust",
+    "body": ["```rust", "$1", "```"],
+    "description": "Insert a rust code block"
+  },
+
+  "zig code block": {
+    "prefix": "zig",
+    "body": ["```zig", "$1", "```"],
+    "description": "Insert a zig code block"
+  },
+
   "yaml code block": {
     "prefix": "yaml",
     "body": ["```yaml", "$1", "```"],
