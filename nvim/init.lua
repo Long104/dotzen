@@ -43,8 +43,7 @@ require("lazy").setup {
     -- { import = 'plugins.utility.likepostman' },
     { import = "plugins.utility.database" },
     -- { import = 'plugins.utility.refactor' },
-    -- { import = 'plugins.utility.docker' },
-    { import = "plugins.utility.kubernetes" },
+    { import = "plugins.utility.devops" },
 
     -- test
     -- { import = 'plugins.utility.test' },
