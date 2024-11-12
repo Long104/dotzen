@@ -10,7 +10,7 @@ end
 local keymap = vim.keymap.set
 -- normal
 keymap("n", "<CR>", "<Esc>", opts "exit insert mode")
-keymap("i", "jj", "<Esc>", opts "exit insert mode")
+keymap({ "i", "t" }, "jj", "<Esc>", opts "exit insert mode")
 keymap("n", "<Esc>", "<cmd>nohlsearch<CR>", opts "un select the text")
 keymap("n", "wd", "<cmd>q!<CR>", opts "Close current split")
 keymap("n", "du", "<cmd>q!<CR>", opts "Close current split")

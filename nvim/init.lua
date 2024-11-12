@@ -39,10 +39,10 @@ require("lazy").setup {
     -- { import = 'plugins.ui.colorschemes.tokyo-night' },
 
     -- utility
-    -- { import = 'plugins.utility.http' },
+    { import = 'plugins.utility.http' },
     -- { import = 'plugins.utility.likepostman' },
     { import = "plugins.utility.database" },
-    -- { import = 'plugins.utility.refactor' },
+    { import = 'plugins.utility.refactor' },
     { import = "plugins.utility.devops" },
 
     -- test
