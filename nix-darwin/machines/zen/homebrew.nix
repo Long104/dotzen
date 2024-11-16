@@ -46,8 +46,8 @@
       "colima"
       "docker"
       "kubectl"
-      "docker-compose
-📋"
+      "docker-compose"
+      "git-lfs"
       # "jmeter"
     ];
 
