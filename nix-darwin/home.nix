@@ -28,6 +28,7 @@
     pkgs.bun
     pkgs.deno
     pkgs.ollama
+    pkgs.starship
     # pkgs.llm-ls
     pkgs.pipx
     # pkgs.lua51Packages.luamagick

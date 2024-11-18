@@ -30,9 +30,9 @@ autoload -Uz _zinit
 
 
 # Load starship with zinit
-zinit wait lucid light-mode for \
-    as"command" from"gh-r" atload'eval "$(starship init zsh)"' \
-    starship/starship \
+# zinit wait lucid light-mode for \
+#     as"command" from"gh-r" atload'eval "$(starship init zsh)"' \
+#     starship/starship \
 
 
 
