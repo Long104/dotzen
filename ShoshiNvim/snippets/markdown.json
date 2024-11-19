@@ -17,6 +17,12 @@
     "description": "Insert a typescript code block"
   },
 
+  "python code block": {
+    "prefix": "python",
+    "body": ["```python", "$1", "```"],
+    "description": "Insert a typescript code block"
+  },
+
   "rust code block": {
     "prefix": "rust",
     "body": ["```rust", "$1", "```"],
