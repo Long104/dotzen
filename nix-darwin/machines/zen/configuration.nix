@@ -25,6 +25,7 @@
       pkgs.bat
       pkgs.cargo
       pkgs.rustc
+      pkgs.python3
       pkgs.luajit
       pkgs.pam-reattach
       pkgs.tmux
