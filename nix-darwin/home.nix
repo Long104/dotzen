@@ -37,6 +37,7 @@
   ];
 
   home.file = {
+    ".config/aerospace".source = ../aerospace;
     ".zshrc".source = ../zshrc/.zshrc;
     ".config/wezterm".source = ../wezterm;
     ".config/starship".source = ../starship.toml;
