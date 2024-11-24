@@ -9,8 +9,7 @@
 after-login-command = []
 
 # You can use it to add commands that run after AeroSpace startup.
-# 'after-startup-command' is run after 'after-login-command'
-# Available commands : https://nikitabobko.github.io/AeroSpace/commands
+# 'after-startup-command' is run after 'after-login-command' Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = []
 
 # Start AeroSpace at login
@@ -219,7 +218,7 @@ if.app-name-regex-substring = 'finder'
 run = 'layout floating'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'ActivityMonitor'
+if.app-id  = 'com.apple.ActivityMonitor'
 run = 'layout floating'
 
 
