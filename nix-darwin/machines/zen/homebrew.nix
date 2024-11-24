@@ -34,7 +34,7 @@
       "spotify"
       "aldente"
       "obsidian"
-      "nikitabobko/tap/aerospace"
+      # "nikitabobko/tap/aerospace"
     ];
 
     brews = [
