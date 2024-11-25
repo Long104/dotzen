@@ -5,8 +5,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.05";
     # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-23.05"; # Stable version
-    # nix-darwin.url = "github:LnL7/nix-darwin";
-    # nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     darwin = {
       url = "github:lnl7/nix-darwin";
@@ -40,11 +38,6 @@
       url = "github:homebrew/homebrew-bundle";
       flake = false;
     };
-
-    spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
@@ -58,7 +51,6 @@
     homebrew-cask,
     homebrew-services,
     homebrew-bundle,
-    spicetify-nix,
     ...
   } @ inputs: let
     configuration = {pkgs, ...}: {
