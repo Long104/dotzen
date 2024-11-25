@@ -40,6 +40,7 @@
     pkgs.ollama
     pkgs.starship
     pkgs.spicetify
+    inputs.spicetify-nix.legacyPackages.${pkgs.system}.spicetify
     # pkgs.llm-ls
     pkgs.pipx
     # pkgs.lua51Packages.luamagick
