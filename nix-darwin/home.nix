@@ -22,12 +22,13 @@
 
   # home.stateVersion = "23.05"; # Please read the comment before changing.
 
-home.enableNixpkgsReleaseCheck = false;
+  home.enableNixpkgsReleaseCheck = false;
 
   # Makes sense for user specific applications that shouldn't be available system-wide
   # home.packages = with pkgs; [
   home.packages = [
-    inputs.spicetify-nix.legacyPackages.${pkgs.system}.spicetify
+    # inputs.spicetify-nix.legacyPackages.${pkgs.system}.spicetify
+    pkgs.spicetify
     pkgs.atuin
     pkgs.fastfetch
     pkgs.yazi
