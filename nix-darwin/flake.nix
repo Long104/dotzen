@@ -3,7 +3,7 @@
 
   inputs = {
     # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nixpkgs.url = "github:NixOS/nixpkgs/stable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.05";
     # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-23.05"; # Stable version
     # nix-darwin.url = "github:LnL7/nix-darwin";
     # nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
