@@ -8,10 +8,10 @@
   inputs,
   ...
 }: {
-  # imports = [
-  #   inputs.spicetify-nix.homeManagerModules.default
-  #   # ./spicetify.nix
-  # ];
+  imports = [
+    inputs.spicetify-nix.homeManagerModules.default
+    # ./spicetify.nix
+  ];
 
   nixpkgs.config = {
     allowUnfree = true;
@@ -27,6 +27,7 @@ home.enableNixpkgsReleaseCheck = false;
   # Makes sense for user specific applications that shouldn't be available system-wide
   # home.packages = with pkgs; [
   home.packages = [
+    inputs.spicetify-nix.legacyPackages.${pkgs.system}.spicetify
     pkgs.atuin
     pkgs.fastfetch
     pkgs.yazi
@@ -42,7 +43,6 @@ home.enableNixpkgsReleaseCheck = false;
     pkgs.deno
     pkgs.ollama
     pkgs.starship
-    # inputs.spicetify-nix.legacyPackages.${pkgs.system}.spicetify
     # pkgs.llm-ls
     pkgs.pipx
     # pkgs.lua51Packages.luamagick
@@ -96,18 +96,18 @@ home.enableNixpkgsReleaseCheck = false;
     # shellAliases = { ls = "ls"; };
   };
 
-  # programs.spicetify = let
-  #   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-  # in {
-  #   enable = true;
-  #   enabledExtensions = with spicePkgs.extensions; [
-  #     adblock
-  #     hidePodcasts
-  #     shuffle # shuffle+ (special characters are sanitized out of extension names)
-  #   ];
-  #   theme = spicePkgs.themes.catppuccin;
-  #   colorScheme = "mocha";
-  # };
+  programs.spicetify = let
+    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+  in {
+    enable = true;
+    enabledExtensions = with spicePkgs.extensions; [
+      adblock
+      hidePodcasts
+      shuffle # shuffle+ (special characters are sanitized out of extension names)
+    ];
+    theme = spicePkgs.themes.catppuccin;
+    colorScheme = "mocha";
+  };
 
   # programs.bat.enable = true;
   # programs.bat.config.theme ="TwoDark" ;

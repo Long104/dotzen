@@ -39,10 +39,10 @@
       flake = false;
     };
 
-    # spicetify-nix = {
-    #   url = "github:Gerg-L/spicetify-nix";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -56,7 +56,7 @@
     homebrew-cask,
     homebrew-services,
     homebrew-bundle,
-    # spicetify-nix,
+    spicetify-nix,
     ...
   } @ inputs: let
     configuration = {pkgs, ...}: {
