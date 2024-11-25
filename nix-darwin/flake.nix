@@ -56,7 +56,7 @@
     homebrew-cask,
     homebrew-services,
     homebrew-bundle,
-    spicetify-nix,
+    # spicetify-nix,
     ...
   } @ inputs: let
     configuration = {pkgs, ...}: {
