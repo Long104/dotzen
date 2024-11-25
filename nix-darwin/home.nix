@@ -5,10 +5,20 @@
   pkgs,
   #test
   lib,
+  inputs,
   ...
 }: {
+  imports = [
+    inputs.spicetify-nix.homeManagerModules.default
+    # ./spicetify.nix
+  ];
+
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
   home.username = "pantornchuavallee";
   home.homeDirectory = "/Users/pantornchuavallee";
+
   # home.stateVersion = "23.05"; # Please read the comment before changing.
 
   # Makes sense for user specific applications that shouldn't be available system-wide
@@ -29,6 +39,7 @@
     pkgs.deno
     pkgs.ollama
     pkgs.starship
+    pkgs.spicetify
     # pkgs.llm-ls
     pkgs.pipx
     # pkgs.lua51Packages.luamagick
@@ -80,6 +91,19 @@
     # enableAutosuggestions =true;
     # enableSyntaxHighlighting =true;
     # shellAliases = { ls = "ls"; };
+  };
+
+  programs.spicetify = let
+    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+  in {
+    enable = true;
+    enabledExtensions = with spicePkgs.extensions; [
+      adblock
+      hidePodcasts
+      shuffle # shuffle+ (special characters are sanitized out of extension names)
+    ];
+    theme = spicePkgs.themes.catppuccin;
+    colorScheme = "mocha";
   };
 
   # programs.bat.enable = true;

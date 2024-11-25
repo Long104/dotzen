@@ -38,6 +38,11 @@
       url = "github:homebrew/homebrew-bundle";
       flake = false;
     };
+
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -51,6 +56,7 @@
     homebrew-cask,
     homebrew-services,
     homebrew-bundle,
+    spicetify-nix,
     ...
   } @ inputs: let
     configuration = {pkgs, ...}: {
@@ -88,7 +94,6 @@
       system.configurationRevision = self.rev or self.dirtyRev or null;
       system.stateVersion = 5;
       nixpkgs.hostPlatform = "x86_64-darwin";
-
 
       home-manager.backupFileExtension = "backup";
       nix.configureBuildUsers = true;
