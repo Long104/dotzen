@@ -8,14 +8,15 @@
   inputs,
   ...
 }: {
-  imports = [
-    inputs.spicetify-nix.homeManagerModules.default
-    # ./spicetify.nix
-  ];
+  # imports = [
+  #   inputs.spicetify-nix.homeManagerModules.default
+  #   # ./spicetify.nix
+  # ];
 
   nixpkgs.config = {
     allowUnfree = true;
   };
+
   home.username = "pantornchuavallee";
   home.homeDirectory = "/Users/pantornchuavallee";
 
@@ -40,7 +41,7 @@
     pkgs.deno
     pkgs.ollama
     pkgs.starship
-    inputs.spicetify-nix.legacyPackages.${pkgs.system}.spicetify
+    # inputs.spicetify-nix.legacyPackages.${pkgs.system}.spicetify
     # pkgs.llm-ls
     pkgs.pipx
     # pkgs.lua51Packages.luamagick
@@ -94,18 +95,18 @@
     # shellAliases = { ls = "ls"; };
   };
 
-  programs.spicetify = let
-    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-  in {
-    enable = true;
-    enabledExtensions = with spicePkgs.extensions; [
-      adblock
-      hidePodcasts
-      shuffle # shuffle+ (special characters are sanitized out of extension names)
-    ];
-    theme = spicePkgs.themes.catppuccin;
-    colorScheme = "mocha";
-  };
+  # programs.spicetify = let
+  #   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+  # in {
+  #   enable = true;
+  #   enabledExtensions = with spicePkgs.extensions; [
+  #     adblock
+  #     hidePodcasts
+  #     shuffle # shuffle+ (special characters are sanitized out of extension names)
+  #   ];
+  #   theme = spicePkgs.themes.catppuccin;
+  #   colorScheme = "mocha";
+  # };
 
   # programs.bat.enable = true;
   # programs.bat.config.theme ="TwoDark" ;
