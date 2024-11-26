@@ -5,6 +5,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.05";
     # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-23.05"; # Stable version
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     darwin = {
       url = "github:lnl7/nix-darwin";
@@ -87,7 +91,8 @@
 
       system.configurationRevision = self.rev or self.dirtyRev or null;
       system.stateVersion = 5;
-      nixpkgs.hostPlatform = "x86_64-darwin";
+      # nixpkgs.hostPlatform = "x86_64-darwin";
+      nixpkgs.hostPlatform = "aarch64-darwin";
 
       home-manager.backupFileExtension = "backup";
       nix.configureBuildUsers = true;
