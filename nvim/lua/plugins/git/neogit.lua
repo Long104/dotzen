@@ -5,6 +5,12 @@ return {
   keys = {
     {
       mode = "n",
+      "<leader>gcl",
+      ":NeogitLogCurrent<CR>",
+      desc = "Neogit Log",
+    },
+    {
+      mode = "n",
       "<leader>gs",
       function()
         require("neogit").open()
