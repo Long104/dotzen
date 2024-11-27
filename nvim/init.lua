@@ -73,7 +73,7 @@ require("lazy").setup {
     -- { import = 'storage.morePlugin.glance' },
     -- { import = 'storage.morePlugin.mini-indent' },
     { import = "storage.morePlugin.neo-clip" },
-    { import = "storage.morePlugin.doing" },
+    -- { import = "storage.morePlugin.doing" },
     -- { import = 'storage.morePlugin.schemastore' },
 
     -- extra storage for language

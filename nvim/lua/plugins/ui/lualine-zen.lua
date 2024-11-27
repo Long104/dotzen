@@ -94,10 +94,10 @@ return {
 
         lualine_x = {
 
-          {
-            require("doing.api").status,
-            separator = { left = "", right = "" },
-          },
+          -- {
+          --   require("doing.api").status,
+          --   separator = { left = "", right = "" },
+          -- },
 
           {
             function()
