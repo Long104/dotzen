@@ -1,0 +1,7 @@
+[16:28:29 2024-11-27] FETCHING Version 2.38.5
+[16:28:29 2024-11-27] CREATING /Users/pantornchuavallee/.spicetify
+[16:28:29 2024-11-27] DOWNLOADING https://github.com/spicetify/cli/releases/download/v2.38.5/spicetify-2.38.5-darwin-arm64.tar.gz
+[16:28:32 2024-11-27] EXTRACTING /Users/pantornchuavallee/.spicetify/spicetify.tar.gz
+[16:28:32 2024-11-27] SETTING EXECUTABLE PERMISSIONS TO /Users/pantornchuavallee/.spicetify/spicetify
+[16:28:32 2024-11-27] REMOVING /Users/pantornchuavallee/.spicetify/spicetify.tar.gz
+[16:28:32 2024-11-27] APPENDING /Users/pantornchuavallee/.spicetify to PATH in /Users/pantornchuavallee/.zshrc
