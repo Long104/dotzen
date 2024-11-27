@@ -1,19 +1,21 @@
 -- example configuration
 return {
   "hashino/do.nvim",
-  keys = { {
-    mode = "n",
-    "<leader>de",
-    "<cmd>lua require('doing.api').edit()<CR>",
-    { noremap = true, silent = true, desc = "Edit what tasks you`re doing" },
+  keys = {
+    {
+      mode = "n",
+      "<leader>de",
+      "<cmd>lua require('doing.api').edit()<CR>",
+      { noremap = true, silent = true, desc = "Edit what tasks you`re doing" },
+    },
+    {
+      mode = "n",
+      "<leader>dn",
+      "<cmd>lua require('doing.api').done()<CR>",
+      { noremap = true, silent = true, desc = "Done with current task" },
+    },
   },
-  {
-    mode = "n",
-    "<leader>dn",
-    "<cmd>lua require('doing.api').done()<CR>",
-    { noremap = true, silent = true, desc = "Done with current task" },
-  }
-},
+  cmd = "Do",
   config = function()
     require("do").setup {
       -- default options
