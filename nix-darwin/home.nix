@@ -47,7 +47,6 @@
     # pkgs.lua51Packages.luamagick
     # linter
     pkgs.hadolint
-    pkgs.spicetify-cli
   ];
 
   home.file = {
