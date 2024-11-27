@@ -122,6 +122,7 @@ alias py-activate="source ~/myenv/bin/activate.fish"
 alias py-deactivate="deactivate"
 alias s="NVIM_APPNAME=Shoshinvim nvim"
 alias start="time ZSH_DEBUGRC=1 zsh -i -c exit"
+alias la="eza -a"
 
 # switcher
 
