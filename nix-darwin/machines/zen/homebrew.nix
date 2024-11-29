@@ -38,6 +38,7 @@
     ];
 
     brews = [
+      "qemu"
       "imagemagick"
       "asdf"
       "luarocks"
