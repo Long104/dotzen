@@ -24,7 +24,7 @@ return {
     -- require('lspconfig').ocamllsp.setup{
     --   on_attach = require'virtualtypes'.on_attach
     -- }
-
+    local util = require "lspconfig.util"
     local lspconfig = require "lspconfig"
 
     -- import mason_lspconfig plugin
@@ -344,6 +344,17 @@ return {
         lspconfig["bashls"].setup {
           capabilities = capabilities,
           filetypes = { "sh", "zsh", "bash" },
+        }
+      end,
+
+      ["helm_ls"] = function()
+        lspconfig["helm_ls"].setup {
+          capabilities = capabilities, -- (Optional) Add LSP capabilities here if needed
+          cmd = { "helm_ls", "serve" }, -- Command to start the Helm LS server
+          filetypes = { "helm" }, -- Filetypes this server should handle
+          root_dir = function(fname) -- Function to determine the root directory for Helm projects
+            return util.root_pattern "Chart.yaml"(fname)
+          end,
         }
       end,
     }

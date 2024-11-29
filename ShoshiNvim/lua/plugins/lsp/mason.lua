@@ -55,6 +55,7 @@ return {
         'lua_ls',
         'ts_ls',
         'grammarly',
+        'ltex',
       },
     }
 

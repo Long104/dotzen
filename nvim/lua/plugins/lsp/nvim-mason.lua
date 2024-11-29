@@ -59,6 +59,7 @@ return {
         -- 'ocamllsp'
         "bashls",
         "biome",
+        "helm_ls",
       },
     }
 

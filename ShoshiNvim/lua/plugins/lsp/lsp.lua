@@ -90,6 +90,7 @@ return {
 
     local keymap = vim.keymap -- for conciseness
 
+
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),
       callback = function(ev)
@@ -182,12 +183,37 @@ return {
           capabilities = capabilities,
         }
       end,
-      ['grammarly'] = function()
-        lspconfig['grammarly'].setup {
+      -- ['grammarly'] = function()
+      --   lspconfig['grammarly'].setup {
+      --     capabilities = capabilities,
+      --     cmd = { 'grammarly-languageserver', '--stdio' },
+      --     filetypes = { 'markdown' },
+      --     root_dir = require('lspconfig.util').root_pattern('.git', '.'),
+      --     -- settings = {
+      --     --   grammarly = {
+      --     --     account = {
+      --     --       username = 'your-email@example.com', -- Optional, Grammarly account email
+      --     --       password = 'your-password', -- Optional, Grammarly account password
+      --     --     },
+      --     --   },
+      --     -- },
+      --   }
+      -- end,
+
+      ['ltex'] = function()
+        lspconfig['ltex'].setup {
           capabilities = capabilities,
-          cmd = { 'grammarly-languageserver', '--stdio' },
-          filetypes = { 'markdown' },
-          root_dir = require('lspconfig.util').root_pattern('.git', '.'),
+          settings = {
+            ltex = {
+              language = 'en', -- Set your desired language
+              additionalRules = {
+                languageModel = '~/models/ngrams/', -- Optional: specify path to language models
+              },
+              dictionary = {
+                ['en'] = { 'customword1', 'customword2' }, -- Optional custom words
+              },
+            },
+          },
         }
       end,
 
