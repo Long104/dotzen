@@ -83,6 +83,7 @@ return {
   config = function()
     local lspconfig = require 'lspconfig'
 
+    local util = require 'lspconfig.util'
     -- import mason_lspconfig plugin
     local mason_lspconfig = require 'mason-lspconfig'
     -- import cmp-nvim-lsp plugin
@@ -182,6 +183,7 @@ return {
           capabilities = capabilities,
         }
       end,
+
       -- ['grammarly'] = function()
       --   lspconfig['grammarly'].setup {
       --     capabilities = capabilities,
@@ -202,18 +204,21 @@ return {
       ['ltex'] = function()
         lspconfig['ltex'].setup {
           capabilities = capabilities,
+          root_dir = util.root_pattern('.ltexrc', '.git', '.'),
           settings = {
             ltex = {
-              language = 'en', -- Set your desired language
+              language = 'en-US', -- Set your desired language
               additionalRules = {
                 languageModel = '~/models/ngrams/', -- Optional: specify path to language models
+                enablePickyRules = false,
               },
-              dictionary = {
-                ['en'] = { 'customword1', 'customword2' }, -- Optional custom words
-              },
+              disabledRules = {},
+              -- dictionary = {
+              --   ['en-US'] = { 'customword1', 'customword2' }, -- Optional custom words
+              -- },
             },
           },
-          filetypes = { 'markdown' },
+          -- filetypes = { 'markdown', 'latex' },
         }
       end,
 
