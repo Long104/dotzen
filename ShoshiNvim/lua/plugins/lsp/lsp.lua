@@ -182,6 +182,14 @@ return {
           capabilities = capabilities,
         }
       end,
+      ['grammarly'] = function()
+        lspconfig['grammarly'].setup {
+          capabilities = capabilities,
+          cmd = { 'grammarly-languageserver', '--stdio' },
+          filetypes = { 'markdown' },
+          root_dir = require('lspconfig.util').root_pattern('.git', '.'),
+        }
+      end,
 
       ['lua_ls'] = function()
         -- configure lua server (with special settings)
