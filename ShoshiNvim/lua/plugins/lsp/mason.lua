@@ -54,7 +54,7 @@ return {
         'marksman',
         'lua_ls',
         'ts_ls',
-        'ltex',
+        -- 'ltex',
       },
     }
 
