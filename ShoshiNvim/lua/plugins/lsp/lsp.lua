@@ -217,6 +217,10 @@ return {
               -- dictionary = {
               --   ['en-US'] = { 'customword1', 'customword2' }, -- Optional custom words
               -- },
+              languageDetection = {
+                enable = false, -- Disable automatic language detection if not required
+                disabledLanguages = { 'zh', 'fa', 'ja', 'ta', 'km' }, -- List the languages to disable
+              },
             },
           },
           filetypes = { 'markdown', 'latex' },
