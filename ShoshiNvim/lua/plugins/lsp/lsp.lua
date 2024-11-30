@@ -204,7 +204,6 @@ return {
       ['ltex'] = function()
         lspconfig['ltex'].setup {
           capabilities = capabilities,
-          cmd = { 'ltex-ls', '--log-level', 'ERROR' },
           root_dir = util.root_pattern('.ltexrc', '.git', '.'),
           settings = {
             ltex = {
