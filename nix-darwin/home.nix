@@ -16,6 +16,10 @@
   nixpkgs.config = {
     allowUnfree = true;
   };
+  programs.java = {
+    enable = true;
+    package = pkgs.oraclejre8;
+  };
 
   home.username = "pantornchuavallee";
   home.homeDirectory = "/Users/pantornchuavallee";
@@ -47,6 +51,8 @@
     # pkgs.lua51Packages.luamagick
     # linter
     pkgs.hadolint
+    # lsp
+    pkgs.ltex-ls
   ];
 
   home.file = {

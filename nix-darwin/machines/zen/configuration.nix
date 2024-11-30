@@ -31,6 +31,7 @@
       pkgs.tmux
       pkgs.htop
       # pkgs.gotop
+      pkgs.jdk23
     ];
     pathsToLink = ["/Applications"];
   };
