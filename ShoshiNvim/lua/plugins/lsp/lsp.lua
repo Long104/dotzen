@@ -208,7 +208,7 @@ return {
           settings = {
             ltex = {
               language = 'en-US', -- Set your desired language
-              disabledLanguages = { 'ja', 'km' }, -- Disable Japanese and Khmer
+              -- disabledLanguages = { 'ja', 'km' }, -- Disable Japanese and Khmer
               additionalRules = {
                 languageModel = '~/models/ngrams/', -- Optional: specify path to language models
                 enablePickyRules = false,
@@ -219,7 +219,7 @@ return {
               -- },
             },
           },
-          -- filetypes = { 'markdown', 'latex' },
+          filetypes = { 'markdown', 'latex' },
         }
       end,
 
