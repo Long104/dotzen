@@ -179,6 +179,8 @@ config.keys = {
 	k.cmd_to_tmux_prefix("j", "j"),
 	k.cmd_to_tmux_prefix("H", "T"),
 	k.cmd_to_tmux_prefix("h", "H"),
+	k.cmd_to_tmux_prefix("$", "T"),
+	k.cmd_to_tmux_prefix("4", "$"),
 }
 
 -- The art is a bit too bright and colorful to be useful as a backdrop
