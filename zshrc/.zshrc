@@ -126,6 +126,7 @@ alias py-deactivate="deactivate"
 alias s="NVIM_APPNAME=Shoshinvim nvim"
 alias start="time ZSH_DEBUGRC=1 zsh -i -c exit"
 alias la="eza -a"
+alias arch="ssh -p 2222 pantorn@2405:9800:b870:d747:76c5:40f7:c7df:7916"
 
 # switcher
 
