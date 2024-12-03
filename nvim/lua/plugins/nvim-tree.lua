@@ -1,35 +1,40 @@
 return {
-  'nvim-tree/nvim-tree.lua',
+  "nvim-tree/nvim-tree.lua",
   -- dependencies = { {
-    -- 'nvim-tree/nvim-web-devicons',opts = {
- -- http = {
- --    icon = "🌐",    -- Example icon (use any emoji or custom icon)
- --    color = "#519aba",  -- Choose a hex color for the icon
- --    cterm_color = "67",
- --    name = "http"
- --  }
--- }
+  -- 'nvim-tree/nvim-web-devicons',opts = {
+  -- http = {
+  --    icon = "🌐",    -- Example icon (use any emoji or custom icon)
+  --    color = "#519aba",  -- Choose a hex color for the icon
+  --    cterm_color = "67",
+  --    name = "http"
+  --  }
+  -- }
   -- } },
   keys = {
     -- { '<leader>e', '<cmd>NvimTreeToggle<cr>', desc = 'toggle file explorer' }, -- toggle file explorer
     {
 
-      '<leader>e',
+      "<leader>e",
       function()
-        require('nvim-tree.api').tree.toggle { path = 'CWD', find_file = false, update_root = false, focus = true }
+        require("nvim-tree.api").tree.toggle { path = "CWD", find_file = false, update_root = false, focus = true }
       end,
-      desc = 'toggle file explorer',
+      desc = "toggle file explorer",
     }, -- toggle file explorer
+    {
+      "<leader>ef",
+      ":NvimTreeRefresh<CR>",
+      desc = "refrest nvim tree",
+    },
   },
-  cmd = { 'NvimTreeToggle', 'NvimTreeFocus' },
+  cmd = { "NvimTreeToggle", "NvimTreeFocus" },
   config = function()
     -- opts = {
-    local nvimtree = require 'nvim-tree'
+    local nvimtree = require "nvim-tree"
 
-    vim.api.nvim_set_hl(0, 'NvimTreeNormal', { bg = 'none' })
-    vim.api.nvim_set_hl(0, 'NvimTreeEndOfBuffer', { bg = 'none' })
-    vim.api.nvim_set_hl(0, 'NvimTreeVertSplit', { bg = 'none' })
-    vim.api.nvim_set_hl(0, 'NvimTreeWinSeparator', { fg = '#808080', bg = 'none' })
+    vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NvimTreeVertSplit", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NvimTreeWinSeparator", { fg = "#808080", bg = "none" })
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwplugin = 1
 
@@ -95,14 +100,14 @@ return {
         },
         -- root_folder_label = ':~:s?$?/..?',
         -- root_folder_label = false,
-        root_folder_label = ':~:s?$?/..?',
+        root_folder_label = ":~:s?$?/..?",
         icons = {
           glyphs = {
             folder = {
-              arrow_closed = '', -- arrow when folder is closed
-              arrow_open = '', -- arrow when folder is open
+              arrow_closed = "", -- arrow when folder is closed
+              arrow_open = "", -- arrow when folder is open
             },
-            git = { unmerged = '' },
+            git = { unmerged = "" },
           },
         },
       },
@@ -122,7 +127,7 @@ return {
         },
       },
       filters = {
-        custom = { '.ds_store' },
+        custom = { ".ds_store" },
       },
       git = {
         ignore = false,
