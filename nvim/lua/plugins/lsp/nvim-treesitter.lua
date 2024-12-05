@@ -47,6 +47,7 @@ return {
       ensure_installed = {
         -- 'properties', --javagrammar
         -- 'rust',
+        -- 'zig',
         -- 'c',
         -- 'java',
         'nix',
@@ -80,6 +81,7 @@ return {
         'gomod',
         'gowork',
         'gosum',
+        "terraform"
       },
     }
 
