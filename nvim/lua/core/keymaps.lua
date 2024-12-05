@@ -21,6 +21,7 @@ keymap("n", "e", "<cmd>e!<cr>", opts "Reload")
 keymap("n", "<leader>qa", "<cmd>wqa!<cr>", opts "close everything")
 keymap("n", "<leader>dm", "<cmd>delm! | delm A-Z0-9<CR>", opts "delete mark")
 keymap("n", "<S-l>", "<cmd>e #<CR>", opts "Go to previous tab")
+keymap("n", "ba", "<cmd>%bd|e#|bd#<CR>", opts "Close all tab only the one not")
 
 vim.api.nvim_set_keymap("x", "<leader>ci", 'c/*<C-r>"*/<Esc>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>ci", "I/* <Esc>A */<Esc>", { noremap = true, silent = true })
