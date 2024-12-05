@@ -10,8 +10,7 @@
 }: {
   # imports = [
   #   inputs.spicetify-nix.homeManagerModules.default
-  #   # ./spicetify.nix
-  # ];
+  #   # ./spicetify.nix ];
 
   nixpkgs.config = {
     allowUnfree = true;
@@ -47,8 +46,9 @@
     # pkgs.lua51Packages.luamagick
     # linter
     pkgs.hadolint
+    pkgs.kubernetes-helm
     # lsp
-    pkgs.ltex-ls
+    # pkgs.ltex-ls
   ];
 
   home.file = {
