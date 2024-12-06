@@ -1,3 +1,8 @@
 return {
-  "nvzone/typr"
+
+  dependencies = {
+
+    { "nvzone/volt", lazy = true },
+  },
+  "nvzone/typr",
 }
