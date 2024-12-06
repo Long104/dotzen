@@ -50,9 +50,9 @@
     pkgs.kubernetes-helm
     # lsp
     # pkgs.ltex-ls
-    pkgs.browsh
     pkgs.ytfzf
     pkgs.lazydocker
+    pkgs.ueberzugpp
   ];
 
   home.file = {
