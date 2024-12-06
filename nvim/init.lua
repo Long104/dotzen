@@ -39,10 +39,10 @@ require("lazy").setup {
     -- { import = 'plugins.ui.colorschemes.tokyo-night' },
 
     -- utility
-    { import = 'plugins.utility.http' },
+    { import = "plugins.utility.http" },
     -- { import = 'plugins.utility.likepostman' },
     { import = "plugins.utility.database" },
-    { import = 'plugins.utility.refactor' },
+    { import = "plugins.utility.refactor" },
     { import = "plugins.utility.devops" },
 
     -- test
@@ -52,7 +52,7 @@ require("lazy").setup {
     -- { import = 'plugins.utility.debug' },
     --
     -- git
-    { import = 'plugins.git' },
+    { import = "plugins.git" },
 
     -- extra storage for plugins
     { import = "storage.morePlugin.oil" },
@@ -78,12 +78,17 @@ require("lazy").setup {
 
     -- extra storage for language
     -- go
-    { import = 'storage.language.go' },
-    { import = 'storage.language.go.debug' },
+    { import = "storage.language.go" },
+    { import = "storage.language.go.debug" },
 
     -- typescript
     { import = "storage.language.typescript" },
     -- { import = 'storage.language.typescript.debug' },
+
+    { import = "storage.morePlugin.nvzone.minty" },
+    { import = "storage.morePlugin.nvzone.typr" },
+    { import = "storage.morePlugin.nvzone.showkey" },
+    { import = "storage.morePlugin.nvzone.timerly" },
   },
   checker = {
     notify = false,

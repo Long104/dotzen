@@ -1,9 +1,8 @@
 return {
-  { "nvzone/volt", lazy = true },
-  {
-    "nvzone/minty",
-    cmd = { "Shades", "Huefy" },
+  "nvzone/minty",
+  dependencies = {
+
+    { "nvzone/volt", lazy = true },
   },
-  { "nvzone/timerly", cmd = "TimerlyToggle" },
-  { "nvzone/showkeys", cmd = "ShowkeysToggle" },
+  cmd = { "Shades", "Huefy" },
 }
