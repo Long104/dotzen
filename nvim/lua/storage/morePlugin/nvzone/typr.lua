@@ -1,4 +1,3 @@
 return {
-  "nvzone/typr",
-  opts = {}
+  "nvzone/typr"
 }
