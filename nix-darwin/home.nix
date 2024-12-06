@@ -34,6 +34,7 @@
     pkgs.gum
     pkgs.neovim
     pkgs.lazygit
+    pkgs.ani-cli
     pkgs.atac
     pkgs.vesktop
     pkgs.imagemagick
