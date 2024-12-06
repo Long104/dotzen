@@ -52,6 +52,7 @@
     # pkgs.ltex-ls
     pkgs.browsh
     pkgs.ytfzf
+    pkgs.lazydocker
   ];
 
   home.file = {
