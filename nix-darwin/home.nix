@@ -50,6 +50,8 @@
     pkgs.kubernetes-helm
     # lsp
     # pkgs.ltex-ls
+    pkgs.browsh
+    pkgs.ytfzf
   ];
 
   home.file = {
