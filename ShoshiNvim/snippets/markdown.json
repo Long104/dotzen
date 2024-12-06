@@ -11,6 +11,13 @@
     "description": "Insert a javascript code block"
   },
 
+
+  "dockerfile code block": {
+    "prefix": "dockerfile",
+    "body": ["```dockerfile", "$1", "```"],
+    "description": "Insert a dockerfile code block"
+  },
+
   "typescript code block": {
     "prefix": "typescript",
     "body": ["```typescript", "$1", "```"],

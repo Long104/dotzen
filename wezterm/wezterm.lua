@@ -12,7 +12,7 @@ local wezterm = require("wezterm")
 -- local fish_path = "/Users/zen/.nix-profile/bin/fish"
 
 -- local fish_path = "/usr/bin/fish"
- -- local fish_path = "/bin/bash"
+-- local fish_path = "/bin/bash"
 local zsh_path = "/bin/zsh"
 
 local config = {}
@@ -116,7 +116,7 @@ config.window_padding = {
 	left = 10,
 	right = 10,
 	top = 0,
-	bottom =0,
+	bottom = 0,
 }
 
 --[[ Appearance setting for when I need to take pretty screenshots
