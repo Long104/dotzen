@@ -34,6 +34,7 @@
       "spotify"
       "aldente"
       "obsidian"
+      "iina"
       # "nikitabobko/tap/aerospace"
     ];
 
@@ -50,6 +51,11 @@
       "kubectl"
       "docker-compose"
       "git-lfs"
+      # ani cli dependencies below
+      "aria2"
+      "ffmpeg"
+      "yt-dlp"
+
       # "jmeter"
     ];
 
