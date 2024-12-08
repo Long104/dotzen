@@ -53,6 +53,9 @@
     pkgs.ytfzf
     pkgs.lazydocker
     pkgs.ueberzugpp
+    # docker
+    pkgs.dive
+    pkgs.docker-slim
   ];
 
   home.file = {
