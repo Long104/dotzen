@@ -158,6 +158,9 @@ alias kc="kubectx"
 alias kns="kubens"
 alias kl="kubectl logs -f"
 alias ke="kubectl exec -it"
+alias kv="kubectl config view --minify | grep namespace"
+alias knd="kubectl config set-context --current --namespace=default"
+
 
 # switcher
 
