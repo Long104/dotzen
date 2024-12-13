@@ -35,7 +35,7 @@ return {
       -- python
       ---@diagnostic disable-next-line: missing-fields
       ruff = {
-        cmd = "/Users/pantornchuavallee/.local/share/nvim/mason/bin/ruff", -- use the full path
+        cmd = "/Users/pantornchuavallee/.local/share/nvim/mason/bin/ruff check", -- use the full path
         stdin = true,
         args = {}, -- add any necessary arguments if needed
         -- args = {
