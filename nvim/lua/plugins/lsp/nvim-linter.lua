@@ -25,47 +25,48 @@ return {
       typescript = { "oxlint" },
       javascriptreact = { "oxlint" },
       typescriptreact = { "oxlint" },
-      python = { "pylint" },
+      python = { "ruff" },
       go = { "golangcilint" },
       Dockerfile = { "hadolint" },
     }
 
     lint.linters = {
-
+      -- test
+      -- python
       ---@diagnostic disable-next-line: missing-fields
-      pylint = {
-        cmd = "/Users/pantornchuavallee/.local/share/nvim/mason/bin/pylint", -- use the full path
+      ruff = {
+        cmd = "/Users/pantornchuavallee/.local/share/nvim/mason/bin/ruff", -- use the full path
         stdin = true,
-        args = {}, -- add any necessary arguments if needed
-        -- args = {
-        --   "--no-warn-ignored", -- <-- this is the key argument
-        --   "--format",
-        --   "json",
-        --   "--stdin",
-        --   "--stdin-filename",
-        --   "%f",
-        --   function()
-        --     return vim.api.nvim_buf_get_name(0)
-        --   end,
-        -- },
+        -- args = {}, -- add any necessary arguments if needed
+        args = {
+          "--no-warn-ignored", -- <-- this is the key argument
+          "--format",
+          "json",
+          "--stdin",
+          "--stdin-filename",
+          "%f",
+          function()
+            return vim.api.nvim_buf_get_name(0)
+          end,
+        },
       },
       -- typescript
       ---@diagnostic disable-next-line: missing-fields
       oxlint = {
         cmd = "/Users/pantornchuavallee/.local/share/nvim/mason/bin/oxlint", -- use the full path
         stdin = true,
-        args = {}, -- add any necessary arguments if needed
-        -- args = {
-        --   "--no-warn-ignored", -- <-- this is the key argument
-        --   "--format",
-        --   "json",
-        --   "--stdin",
-        --   "--stdin-filename",
-        --   "%f",
-        --   function()
-        --     return vim.api.nvim_buf_get_name(0)
-        --   end,
-        -- },
+        -- args = {}, -- add any necessary arguments if needed
+        args = {
+          "--no-warn-ignored", -- <-- this is the key argument
+          "--format",
+          "json",
+          "--stdin",
+          "--stdin-filename",
+          "%f",
+          function()
+            return vim.api.nvim_buf_get_name(0)
+          end,
+        },
       },
 
       ---@diagnostic disable-next-line: missing-fields
