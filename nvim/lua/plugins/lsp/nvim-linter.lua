@@ -25,7 +25,7 @@ return {
       typescript = { "oxlint" },
       javascriptreact = { "oxlint" },
       typescriptreact = { "oxlint" },
-      python = { "ruff" },
+      python = { "flake8" },
       go = { "golangcilint" },
       Dockerfile = { "hadolint" },
     }
@@ -34,21 +34,10 @@ return {
       -- test
       -- python
       ---@diagnostic disable-next-line: missing-fields
-      ruff = {
-        cmd = "/Users/pantornchuavallee/.local/share/nvim/mason/bin/ruff check", -- use the full path
+       flake8 = {
+        cmd = "/Users/pantornchuavallee/.local/share/nvim/mason/bin/flake8", -- use the full path
         stdin = true,
         args = {}, -- add any necessary arguments if needed
-        -- args = {
-        --   "--no-warn-ignored", -- <-- this is the key argument
-        --   "--format",
-        --   "json",
-        --   "--stdin",
-        --   "--stdin-filename",
-        --   "%f",
-        --   function()
-        --     return vim.api.nvim_buf_get_name(0)
-        --   end,
-        -- },
       },
       -- typescript
       ---@diagnostic disable-next-line: missing-fields
@@ -163,4 +152,3 @@ return {
 --     end, { desc = 'Trigger linting for current file' })
 --   end,
 -- }
-

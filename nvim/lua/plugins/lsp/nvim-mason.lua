@@ -77,6 +77,7 @@ return {
         "black",
         "eslint_d",
         "ruff",
+        "flake8",
         -- "hadolint",
         -- 'nixpkgs-fmt',
         -- 'google-java-format',
