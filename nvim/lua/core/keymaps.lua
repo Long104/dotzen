@@ -26,6 +26,9 @@ keymap("n", "ba", "<cmd>%bd|e#|bd#<CR>", opts "Close all tab only the one not")
 vim.api.nvim_set_keymap("x", "<leader>ci", 'c/*<C-r>"*/<Esc>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>ci", "I/* <Esc>A */<Esc>", { noremap = true, silent = true })
 
+vim.api.nvim_set_keymap("x", "<leader>cr", 'c{/*<C-r>"*/}<Esc>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>cr", "I{/* <Esc>A */}<Esc>", { noremap = true, silent = true })
+
 -- diagostic
 keymap("n", "ql", vim.diagnostic.setloclist, opts "Open diagnostic [Q]uickfix list")
 -- git
