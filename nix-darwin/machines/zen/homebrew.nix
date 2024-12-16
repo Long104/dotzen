@@ -55,6 +55,7 @@
       "aria2"
       "ffmpeg"
       "yt-dlp"
+      "nasm"
 
       # "jmeter"
     ];
