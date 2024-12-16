@@ -11,33 +11,33 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # home-manager = {
-    #   url = "github:nix-community/home-manager";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    #
-    # nix-homebrew = {
-    #   url = "github:zhaofengli/nix-homebrew";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    #   inputs.nix-darwin.follows = "darwin";
-    # };
-    # homebrew-core = {
-    #   url = "github:homebrew/homebrew-core";
-    #   flake = false;
-    # };
-    # homebrew-cask = {
-    #   url = "github:homebrew/homebrew-cask";
-    #   flake = false;
-    # };
-    # homebrew-services = {
-    #   url = "github:homebrew/homebrew-services";
-    #   flake = false;
-    # };
-    #
-    # homebrew-bundle = {
-    #   url = "github:homebrew/homebrew-bundle";
-    #   flake = false;
-    # };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-homebrew = {
+      url = "github:zhaofengli/nix-homebrew";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nix-darwin.follows = "darwin";
+    };
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
+    homebrew-services = {
+      url = "github:homebrew/homebrew-services";
+      flake = false;
+    };
+
+    homebrew-bundle = {
+      url = "github:homebrew/homebrew-bundle";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -99,45 +99,45 @@
       pkgs = import inputs.nixpkgs {system = "aarch64-darwin";};
       specialArgs = {inherit inputs;};
       modules = [
-        # ./machines/zen/configuration.nix
-        # ./machines/zen/homebrew.nix
+        ./machines/zen/configuration.nix
+        ./machines/zen/homebrew.nix
 
         configuration
 
-        # home-manager.darwinModule
-        # {
-        #   home-manager = {
-        #     useGlobalPkgs = true;
-        #     useUserPackages = true;
-        #     # makes all inputs available in imported files for hm
-        #     extraSpecialArgs = {inherit inputs;};
-        #     users.pantornchuavallee = {...}: {
-        #       # imports = [shared ./home-manager/eve];
-        #       imports = [./home.nix];
-        #       home.file.".hushlogin".text = "";
-        #       home.stateVersion = "23.05"; # Please read the comment before changing.
-        #     };
-        #   };
-        # }
-        #
-        # nix-homebrew.darwinModules.nix-homebrew
-        # {
-        #   nix-homebrew = {
-        #     # Install Homebrew under the default prefix
-        #     enable = true;
-        #     enableRosetta = false;
-        #     # User owning the Homebrew prefix
-        #     user = "pantornchuavallee";
-        #     taps = {
-        #       "homebrew/homebrew-core" = homebrew-core;
-        #       "homebrew/homebrew-cask" = homebrew-cask;
-        #       "homebrew/homebrew-services" = homebrew-services;
-        #       "homebrew/homebrew-bundle" = homebrew-bundle;
-        #     };
-        #     mutableTaps = false;
-        #     # autoMigrate = true;
-        #   };
-        # }
+        home-manager.darwinModule
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            # makes all inputs available in imported files for hm
+            extraSpecialArgs = {inherit inputs;};
+            users.pantornchuavallee = {...}: {
+              # imports = [shared ./home-manager/eve];
+              imports = [./home.nix];
+              home.file.".hushlogin".text = "";
+              home.stateVersion = "23.05"; # Please read the comment before changing.
+            };
+          };
+        }
+
+        nix-homebrew.darwinModules.nix-homebrew
+        {
+          nix-homebrew = {
+            # Install Homebrew under the default prefix
+            enable = true;
+            enableRosetta = false;
+            # User owning the Homebrew prefix
+            user = "pantornchuavallee";
+            taps = {
+              "homebrew/homebrew-core" = homebrew-core;
+              "homebrew/homebrew-cask" = homebrew-cask;
+              "homebrew/homebrew-services" = homebrew-services;
+              "homebrew/homebrew-bundle" = homebrew-bundle;
+            };
+            mutableTaps = false;
+            # autoMigrate = true;
+          };
+        }
       ];
     };
 
