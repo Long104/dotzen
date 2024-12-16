@@ -6,8 +6,7 @@
     # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.05";
     # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-23.05"; # Stable version
 
-    darwin = {
-      url = "github:lnl7/nix-darwin";
+    darwin = { url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
