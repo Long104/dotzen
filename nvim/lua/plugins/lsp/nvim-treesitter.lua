@@ -46,8 +46,9 @@ return {
       },
       ensure_installed = {
         -- 'properties', --javagrammar
-        -- 'rust',
-        -- 'zig',
+        'rust',
+        'zig',
+        'helm',
         -- 'c',
         -- 'java',
         'nix',
