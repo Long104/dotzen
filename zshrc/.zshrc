@@ -17,6 +17,7 @@ export PATH="/usr/local/bin:/usr/bin:$PATH"
 export $(grep -v '^#' ~/dotzen/.env | xargs)
 export PATH="$HOME/.deno/bin:$PATH"
 export PATH="$HOME/.spicetify:$PATH"
+export PATH="/Users/pantornchuavallee/.cargo/bin:$PATH"
 
 export JAVA_HOME=/nix/store/z3gwlzrkdhn672rcqjgajiaqqfn95bz0-zulu-ca-jdk-23.0.0/zulu-23.jdk/Contents/Home
 export PATH=$JAVA_HOME/bin:$PATH
