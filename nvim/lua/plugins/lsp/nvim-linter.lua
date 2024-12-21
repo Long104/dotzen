@@ -32,10 +32,17 @@ return {
     }
 
     lint.linters = {
+
+      ---@diagnostic disable-next-line: missing-fields
+      bacon = {
+        cmd = "/Users/pantornchuavallee/.local/share/nvim/mason/bin/bacon", -- use the full path
+        stdin = true,
+        args = {}, -- add any necessary arguments if needed
+      },
       -- test
       -- python
       ---@diagnostic disable-next-line: missing-fields
-       flake8 = {
+      flake8 = {
         cmd = "/Users/pantornchuavallee/.local/share/nvim/mason/bin/flake8", -- use the full path
         stdin = true,
         args = {}, -- add any necessary arguments if needed

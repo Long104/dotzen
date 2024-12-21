@@ -68,7 +68,7 @@ return {
       ensure_installed = {
         -- rust
         "rustfmt",
-        "becon",
+        "bacon",
         -- 'cargo-edit',
         "shfmt",
         "oxlint",
