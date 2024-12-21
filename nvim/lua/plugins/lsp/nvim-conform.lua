@@ -29,6 +29,7 @@ return {
         nix = { "alejandra" },
         bash = { "shfmt" },
         zsh = { "shfmt" },
+        rust = { "rustfmt" },
       },
       -- on save
       -- format_on_save = {

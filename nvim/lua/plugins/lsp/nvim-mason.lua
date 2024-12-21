@@ -40,7 +40,7 @@ return {
       -- list of servers for mason to install
       ensure_installed = {
         -- 'jdtls'
-        -- 'rust_analyzer',
+        'rust_analyzer',
         "html",
         "emmet_language_server",
         "cssls",
@@ -66,6 +66,10 @@ return {
 
     mason_tool_installer.setup {
       ensure_installed = {
+        -- rust
+        "rustfmt",
+        "becon",
+        -- 'cargo-edit',
         "shfmt",
         "oxlint",
         -- 'pint',
@@ -82,13 +86,14 @@ return {
         -- 'nixpkgs-fmt',
         -- 'google-java-format',
         -- 'checkstyle',
+        "llm-ls",
+        -- golang
         -- 'goimports-reviser',
         "goimports",
         "gomodifytags",
         -- 'impl',
         "gofumpt",
         "golangci-lint",
-        "llm-ls",
       },
     }
 

@@ -347,6 +347,11 @@ return {
         }
       end,
 
+      ["rust_analyzer"] = function() lspconfig[" rust_analyzer "].setup {
+        capabilities = capabilities,
+        filetypes = { "rust" },
+      } end,
+
       ["helm_ls"] = function()
         lspconfig["helm_ls"].setup {
           capabilities = capabilities, -- (Optional) Add LSP capabilities here if needed

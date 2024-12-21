@@ -28,6 +28,7 @@ return {
       python = { "flake8" },
       go = { "golangcilint" },
       Dockerfile = { "hadolint" },
+      rust = { "bacon" },
     }
 
     lint.linters = {
